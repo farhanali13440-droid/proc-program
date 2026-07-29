@@ -264,7 +264,7 @@ function LandingPage() {
             </div>
             <CardContent className="space-y-6 p-6 sm:p-8">
               <div>
-                <p className="mb-3 text-sm font-semibold text-primary">Your consultation includes:</p>
+                <p className="mb-3 text-center text-sm font-semibold text-primary sm:text-left">Your consultation includes:</p>
                 <ul className="grid gap-2.5 sm:grid-cols-2">
                   {offerIncludes.map((i) => (
                     <TickItem key={i}>{i}</TickItem>
@@ -319,11 +319,11 @@ function LandingPage() {
           <SectionTitle eyebrow="Your Doctor" title="Meet Your PCOS Specialist" />
           <Card className="border-border shadow-card">
             <CardContent className="space-y-5 p-6 sm:p-8">
-              <p className="text-sm leading-relaxed text-foreground/85">
+              <p className="text-center text-sm leading-relaxed text-foreground/85 sm:text-left">
                 Dr. Zaib Un Nisa is a Consultant Gynaecologist &amp; Obstetrician providing
                 individualized care for women dealing with hormonal and reproductive health concerns.
               </p>
-              <p className="text-sm font-medium text-primary">Her approach focuses on:</p>
+              <p className="text-center text-sm font-medium text-primary sm:text-left">Her approach focuses on:</p>
               <ul className="grid gap-2.5 sm:grid-cols-2">
                 {[
                   "Understanding your symptoms",
@@ -347,7 +347,7 @@ function LandingPage() {
             <SectionTitle eyebrow="Suitability" title="Who Is This For?" />
             <Card className="border-border bg-background shadow-card">
               <CardContent className="space-y-5 p-6 sm:p-8">
-                <p className="text-sm text-muted-foreground">
+                <p className="text-center text-sm text-muted-foreground sm:text-left">
                   This consultation is suitable for women:
                 </p>
                 <ul className="grid gap-2.5 sm:grid-cols-2">
@@ -417,7 +417,7 @@ function LandingPage() {
             <SectionTitle eyebrow="Why Dr. Zaib Un Nisa" title="Evidence-Based Personalized Care" />
             <Card className="border-border bg-background shadow-card">
               <CardContent className="space-y-4 p-6 sm:p-8">
-                <p className="text-sm leading-relaxed text-foreground/85">
+                <p className="text-center text-sm leading-relaxed text-foreground/85 sm:text-left">
                   Every woman experiences PCOS differently. Dr. Zaib Un Nisa focuses on creating
                   personalized care plans based on:
                 </p>
