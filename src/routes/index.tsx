@@ -38,11 +38,11 @@ export const Route = createFileRoute("/")({
         content:
           "Book a PKR 500 PCOS consultation with Dr. Zaib Un Nisa (MBBS, FCPS), Consultant Gynaecologist at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
       },
-      { property: "og:title", content: "PCOS Consultation with Dr. Zaib Un Nisa — PKR 500" },
+      { property: "og:title", content: "PCOS Consultation PKR 500 | Dr. Zaib Un Nisa, Gynaecologist" },
       {
         property: "og:description",
         content:
-          "Understand your PCOS symptoms and get a personalised medical care plan from a qualified Consultant Gynaecologist & Obstetrician.",
+          "Book a PKR 500 PCOS consultation with Dr. Zaib Un Nisa (MBBS, FCPS), Consultant Gynaecologist at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
