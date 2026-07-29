@@ -141,19 +141,22 @@ const faqs = [
   },
 ];
 
-function BookButton({ label = "Book Your PCOS Consultation For PKR 500" }: { label?: string }) {
+function BookButton({ label = "Book PCOS Consultation — PKR 500" }: { label?: string }) {
   return (
-    <Button
-      asChild
-      size="lg"
-      className="h-auto w-full rounded-full px-6 py-4 text-base font-semibold shadow-soft sm:w-auto"
-    >
-      <Link to="/checkout" onClick={() => trackInitiateCheckout()}>
-        {label}
-      </Link>
-    </Button>
+    <div className="flex w-full justify-center">
+      <Button
+        asChild
+        size="lg"
+        className="h-auto w-full max-w-md rounded-full px-6 py-4 text-center text-base font-semibold leading-snug shadow-soft"
+      >
+        <Link to="/checkout" onClick={() => trackInitiateCheckout()}>
+          {label}
+        </Link>
+      </Button>
+    </div>
   );
 }
+
 
 function LandingPage() {
   return (
@@ -162,47 +165,45 @@ function LandingPage() {
       <main>
         {/* HERO */}
         <section className="bg-hero-soft">
-          <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-            <div className="grid items-center gap-10 md:grid-cols-2">
-              <div className="space-y-6">
-                <span className="inline-flex items-center gap-2 rounded-full bg-background px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary shadow-card">
-                  <BadgeCheck className="size-3.5 text-gold-foreground" aria-hidden="true" />
-                  PCOS Care Consultation
-                </span>
-                <h1 className="text-balance text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-[2.75rem]">
-                  PCOS Ko Samjhein, Manage Karein Aur Apni Health Ke Liye Sahi Treatment Plan Shuru
-                  Karein
-                </h1>
-                <p className="text-pretty text-sm leading-relaxed text-foreground/80 sm:text-base">
-                  A personalized PCOS consultation with{" "}
-                  <strong className="font-semibold text-primary">Dr. Zaib Un Nisa (MBBS, FCPS)</strong>,
-                  Consultant Gynaecologist &amp; Obstetrician. Understand your symptoms, get medical
-                  guidance, dietary counselling and a personalized treatment approach.
-                </p>
-                <BookButton />
-                <ul className="grid gap-2 sm:grid-cols-2">
-                  {badges.map((b) => (
-                    <TickItem key={b}>{b}</TickItem>
-                  ))}
-                </ul>
-              </div>
-              <div className="relative">
-                <div className="absolute -inset-3 rounded-[2rem] bg-accent/50 blur-2xl" aria-hidden="true" />
+          <div className="mx-auto max-w-3xl px-5 py-12 text-center sm:py-16">
+            <div className="flex flex-col items-center gap-6">
+              <span className="inline-flex items-center gap-2 rounded-full bg-background px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary shadow-card">
+                <BadgeCheck className="size-3.5 text-gold-foreground" aria-hidden="true" />
+                PCOS Care Consultation
+              </span>
+              <h1 className="text-balance text-[1.75rem] font-semibold leading-tight text-primary sm:text-4xl">
+                PCOS Ko Samjhein, Manage Karein Aur Apni Health Ke Liye Sahi Treatment Plan Shuru
+                Karein
+              </h1>
+              <p className="mx-auto max-w-xl text-pretty text-[0.95rem] leading-relaxed text-foreground/80">
+                A personalized PCOS consultation with{" "}
+                <strong className="font-semibold text-primary">Dr. Zaib Un Nisa (MBBS, FCPS)</strong>,
+                Consultant Gynaecologist &amp; Obstetrician — understand your symptoms and get a
+                personalized treatment approach.
+              </p>
+              <BookButton />
+              <div className="relative w-full">
                 <img
                   src={heroConsultation.url}
                   alt="Dr. Zaib Un Nisa consulting a patient about PCOS at Al-Qamar Hospital"
                   width={1664}
                   height={936}
-                  className="relative w-full rounded-3xl shadow-soft"
+                  className="w-full rounded-3xl shadow-soft"
                 />
-                <div className="relative -mt-8 mx-4 rounded-2xl border border-border bg-background/95 p-4 text-center shadow-card backdrop-blur">
+                <div className="relative mx-4 -mt-8 rounded-2xl border border-border bg-background/95 p-4 text-center shadow-card backdrop-blur">
                   <p className="font-display text-lg font-semibold text-primary">Al-Qamar Hospital</p>
                   <p className="text-xs text-muted-foreground">Railway Road, Shakargarh</p>
                 </div>
               </div>
+              <ul className="mx-auto grid w-full max-w-md gap-2.5 sm:grid-cols-2">
+                {badges.map((b) => (
+                  <TickItem key={b}>{b}</TickItem>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
+
 
         {/* SYMPTOMS VISUAL */}
         <section className="bg-secondary/50 py-14 sm:py-16">
