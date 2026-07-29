@@ -18,6 +18,9 @@ import { trackInitiateCheckout } from "@/lib/tracking";
 import heroConsultation from "@/assets/hero-consultation.png.asset.json";
 import pcosSymptoms from "@/assets/pcos-symptoms.png.asset.json";
 import pcosGuidance from "@/assets/pcos-guidance.png.asset.json";
+import threeStepProcess from "@/assets/three-step-process.png.asset.json";
+import careProgram from "@/assets/care-program.png.asset.json";
+import patientTestimonials from "@/assets/patient-testimonials.png.asset.json";
 import {
   BadgeCheck,
   CalendarClock,
@@ -93,20 +96,6 @@ const suitableFor = [
   "Wanting better understanding of PCOS",
 ];
 
-const steps = [
-  {
-    title: "Book Your Consultation",
-    text: "Pay PKR 500 and reserve your appointment.",
-  },
-  {
-    title: "Consult With Dr. Zaib Un Nisa",
-    text: "Discuss symptoms, reports and concerns.",
-  },
-  {
-    title: "Get Your Personalized PCOS Care Plan",
-    text: "Understand the next best steps for managing PCOS.",
-  },
-];
 
 const programIncludes = [
   "Doctor consultations",
@@ -262,31 +251,6 @@ function LandingPage() {
           </div>
         </section>
 
-        {/* DOCTOR */}
-        <section className="mx-auto max-w-5xl px-4 py-14">
-          <SectionTitle eyebrow="Your Doctor" title="Meet Your PCOS Specialist" />
-          <Card className="border-border shadow-card">
-            <CardContent className="space-y-5 p-6 sm:p-8">
-              <p className="text-sm leading-relaxed text-foreground/85">
-                Dr. Zaib Un Nisa is a Consultant Gynaecologist &amp; Obstetrician providing
-                individualized care for women dealing with hormonal and reproductive health concerns.
-              </p>
-              <p className="text-sm font-medium text-primary">Her approach focuses on:</p>
-              <ul className="grid gap-2.5 sm:grid-cols-2">
-                {[
-                  "Understanding your symptoms",
-                  "Proper diagnosis",
-                  "Personalized treatment planning",
-                  "Lifestyle modification",
-                  "Long-term health improvement",
-                ].map((i) => (
-                  <TickItem key={i}>{i}</TickItem>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </section>
-
         {/* OFFER */}
         <section className="mx-auto max-w-5xl px-4 py-14">
           <SectionTitle eyebrow="The Offer" title="PCOS Consultation — Only PKR 500" />
@@ -328,6 +292,54 @@ function LandingPage() {
           </Card>
         </section>
 
+        {/* 3-STEP PROCESS VISUAL */}
+        <section className="bg-secondary/50 py-14 sm:py-16">
+          <div className="mx-auto max-w-5xl px-4">
+            <SectionTitle
+              eyebrow="Process"
+              title="How Your PCOS Consultation Works"
+              subtitle="A simple process to get professional guidance for your PCOS concerns."
+            />
+            <div className="overflow-hidden rounded-3xl border border-border bg-background p-2 shadow-soft sm:p-3">
+              <img
+                src={threeStepProcess.url}
+                alt="Simple 3-step process: book your consultation, consult with Dr. Zaib Un Nisa, receive your PCOS care plan"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                className="w-full rounded-2xl"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* DOCTOR */}
+        <section className="mx-auto max-w-5xl px-4 py-14">
+          <SectionTitle eyebrow="Your Doctor" title="Meet Your PCOS Specialist" />
+          <Card className="border-border shadow-card">
+            <CardContent className="space-y-5 p-6 sm:p-8">
+              <p className="text-sm leading-relaxed text-foreground/85">
+                Dr. Zaib Un Nisa is a Consultant Gynaecologist &amp; Obstetrician providing
+                individualized care for women dealing with hormonal and reproductive health concerns.
+              </p>
+              <p className="text-sm font-medium text-primary">Her approach focuses on:</p>
+              <ul className="grid gap-2.5 sm:grid-cols-2">
+                {[
+                  "Understanding your symptoms",
+                  "Proper diagnosis",
+                  "Personalized treatment planning",
+                  "Lifestyle modification",
+                  "Long-term health improvement",
+                ].map((i) => (
+                  <TickItem key={i}>{i}</TickItem>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+
+
+
         {/* WHO IS THIS FOR */}
         <section className="bg-secondary/50 py-14">
           <div className="mx-auto max-w-3xl px-4">
@@ -350,23 +362,6 @@ function LandingPage() {
           </div>
         </section>
 
-        {/* HOW IT WORKS */}
-        <section className="mx-auto max-w-5xl px-4 py-14">
-          <SectionTitle eyebrow="Process" title="How It Works" />
-          <div className="grid gap-4 sm:grid-cols-3">
-            {steps.map((s, idx) => (
-              <Card key={s.title} className="border-border shadow-card">
-                <CardContent className="space-y-2 p-6">
-                  <span className="inline-flex size-9 items-center justify-center rounded-full bg-primary font-display text-base font-semibold text-primary-foreground">
-                    {idx + 1}
-                  </span>
-                  <h3 className="text-base font-semibold text-primary">{s.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
 
         {/* PROGRAM */}
         <section className="bg-primary py-14 text-primary-foreground">
@@ -437,6 +432,27 @@ function LandingPage() {
           </div>
         </section>
 
+        {/* CARE PROGRAM VISUAL */}
+        <section className="py-14 sm:py-16">
+          <div className="mx-auto max-w-5xl px-4">
+            <SectionTitle
+              eyebrow="Next Step"
+              title="Continue Your PCOS Journey With Personalized Support"
+              subtitle="Patients who need additional support may be guided through our structured PCOS Care Program."
+            />
+            <div className="overflow-hidden rounded-3xl border border-border bg-background p-2 shadow-soft sm:p-3">
+              <img
+                src={careProgram.url}
+                alt="PCOS Care Program materials: care guide, health tracker, consultation notes, WhatsApp support and lifestyle planner"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                className="w-full rounded-2xl"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="mx-auto max-w-3xl px-4 py-14">
           <SectionTitle eyebrow="FAQ" title="Common Questions About PCOS" />
@@ -452,6 +468,27 @@ function LandingPage() {
               </AccordionItem>
             ))}
           </Accordion>
+        </section>
+
+        {/* TESTIMONIALS VISUAL */}
+        <section className="bg-secondary/50 py-14 sm:py-16">
+          <div className="mx-auto max-w-5xl px-4">
+            <SectionTitle
+              eyebrow="Patient Experience"
+              title="What Women Say About Their Experience"
+              subtitle="Real feedback about consultation experience and personalized guidance."
+            />
+            <div className="overflow-hidden rounded-3xl border border-border bg-background p-2 shadow-soft sm:p-3">
+              <img
+                src={patientTestimonials.url}
+                alt="Patient testimonials about PCOS consultations with Dr. Zaib Un Nisa"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                className="w-full rounded-2xl"
+              />
+            </div>
+          </div>
         </section>
 
         {/* FINAL CTA */}
