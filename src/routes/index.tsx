@@ -19,14 +19,9 @@ import heroConsultation from "@/assets/hero-consultation.png.asset.json";
 import pcosSymptoms from "@/assets/pcos-symptoms.png.asset.json";
 import pcosGuidance from "@/assets/pcos-guidance.png.asset.json";
 import {
-  Activity,
   BadgeCheck,
   CalendarClock,
   Clock,
-  HeartPulse,
-  Scale,
-  Sparkles,
-  Stethoscope,
   Video,
 } from "lucide-react";
 
@@ -77,15 +72,6 @@ const badges = [
   "Al-Qamar Hospital",
   "Online Consultation Available",
   "Private & Confidential Consultation",
-];
-
-const symptoms = [
-  { icon: Scale, title: "Weight gain", text: "Unexplained or difficult-to-manage weight changes." },
-  { icon: Sparkles, title: "Excessive facial/body hair", text: "Hirsutism and related skin concerns." },
-  { icon: CalendarClock, title: "Irregular periods", text: "Delayed, missed or unpredictable cycles." },
-  { icon: HeartPulse, title: "Hormonal imbalance symptoms", text: "Acne, mood changes, hair thinning." },
-  { icon: Stethoscope, title: "Difficulty planning pregnancy", text: "Concerns around conception and timing." },
-  { icon: Activity, title: "Metabolic health concerns", text: "Sugar, insulin and energy related issues." },
 ];
 
 const offerIncludes = [
