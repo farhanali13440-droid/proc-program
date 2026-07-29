@@ -15,16 +15,13 @@ import {
   WhatsAppFloat,
 } from "@/components/site";
 import { trackInitiateCheckout } from "@/lib/tracking";
-import doctorImage from "@/assets/doctor.jpg";
+import heroConsultation from "@/assets/hero-consultation.png.asset.json";
+import pcosSymptoms from "@/assets/pcos-symptoms.png.asset.json";
+import pcosGuidance from "@/assets/pcos-guidance.png.asset.json";
 import {
-  Activity,
   BadgeCheck,
   CalendarClock,
   Clock,
-  HeartPulse,
-  Scale,
-  Sparkles,
-  Stethoscope,
   Video,
 } from "lucide-react";
 
@@ -71,19 +68,10 @@ export const Route = createFileRoute("/")({
 });
 
 const badges = [
-  "MBBS, FCPS Qualified Gynaecologist",
-  "Personalized Medical Guidance",
+  "MBBS, FCPS Specialist",
+  "Al-Qamar Hospital",
   "Online Consultation Available",
-  "Evidence-Based Care",
-];
-
-const symptoms = [
-  { icon: Scale, title: "Weight gain", text: "Unexplained or difficult-to-manage weight changes." },
-  { icon: Sparkles, title: "Excessive facial/body hair", text: "Hirsutism and related skin concerns." },
-  { icon: CalendarClock, title: "Irregular periods", text: "Delayed, missed or unpredictable cycles." },
-  { icon: HeartPulse, title: "Hormonal imbalance symptoms", text: "Acne, mood changes, hair thinning." },
-  { icon: Stethoscope, title: "Difficulty planning pregnancy", text: "Concerns around conception and timing." },
-  { icon: Activity, title: "Metabolic health concerns", text: "Sugar, insulin and energy related issues." },
+  "Private & Confidential Consultation",
 ];
 
 const offerIncludes = [
@@ -212,11 +200,11 @@ function LandingPage() {
               <div className="relative">
                 <div className="absolute -inset-3 rounded-[2rem] bg-accent/50 blur-2xl" aria-hidden="true" />
                 <img
-                  src={doctorImage}
-                  alt="Dr. Zaib Un Nisa, Consultant Gynaecologist and Obstetrician, at her clinic"
-                  width={1024}
-                  height={1280}
-                  className="relative w-full rounded-[1.75rem] object-cover shadow-soft"
+                  src={heroConsultation.url}
+                  alt="Dr. Zaib Un Nisa consulting a patient about PCOS at Al-Qamar Hospital"
+                  width={1664}
+                  height={936}
+                  className="relative w-full rounded-3xl shadow-soft"
                 />
                 <div className="relative -mt-8 mx-4 rounded-2xl border border-border bg-background/95 p-4 text-center shadow-card backdrop-blur">
                   <p className="font-display text-lg font-semibold text-primary">Al-Qamar Hospital</p>
@@ -224,6 +212,53 @@ function LandingPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* SYMPTOMS VISUAL */}
+        <section className="bg-secondary/50 py-14 sm:py-16">
+          <div className="mx-auto max-w-5xl px-4">
+            <SectionTitle
+              eyebrow="Symptoms"
+              title="Are You Experiencing These PCOS Symptoms?"
+              subtitle="Many women experience these symptoms without understanding the right medical guidance."
+            />
+            <div className="overflow-hidden rounded-3xl border border-border bg-background p-2 shadow-soft sm:p-3">
+              <img
+                src={pcosSymptoms.url}
+                alt="Common PCOS symptoms: weight gain, excess hair growth, irregular periods and pregnancy planning concerns"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                className="w-full rounded-2xl"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* GUIDANCE */}
+        <section className="py-14 sm:py-16">
+          <div className="mx-auto max-w-5xl px-4">
+            <SectionTitle
+              eyebrow="Why Many Women Struggle"
+              title="Random Advice Doesn't Replace Proper Medical Guidance"
+              subtitle="Every woman's PCOS journey is different. Proper evaluation helps create a personalized care approach based on symptoms, health goals and medical history."
+            />
+            <div className="overflow-hidden rounded-3xl border border-border bg-background p-2 shadow-soft sm:p-3">
+              <img
+                src={pcosGuidance.url}
+                alt="Comparison between confusion from random online advice and clarity from personalized medical care"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                className="w-full rounded-2xl"
+              />
+            </div>
+            <ul className="mx-auto mt-8 grid max-w-3xl gap-2.5 sm:grid-cols-3">
+              {["Proper Assessment", "Personalized Care Plan", "Evidence-Based Guidance"].map((i) => (
+                <TickItem key={i}>{i}</TickItem>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -250,30 +285,6 @@ function LandingPage() {
               </ul>
             </CardContent>
           </Card>
-        </section>
-
-        {/* PROBLEM */}
-        <section className="bg-secondary/50 py-14">
-          <div className="mx-auto max-w-5xl px-4">
-            <SectionTitle
-              eyebrow="Symptoms"
-              title="Are You Experiencing These PCOS Symptoms?"
-              subtitle="Many women struggle with PCOS symptoms without understanding the right steps. A proper medical evaluation can help you understand your condition and available treatment options."
-            />
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {symptoms.map(({ icon: Icon, title, text }) => (
-                <Card key={title} className="border-border/80 bg-background shadow-card">
-                  <CardContent className="space-y-2 p-5">
-                    <span className="inline-flex size-10 items-center justify-center rounded-xl bg-accent">
-                      <Icon className="size-5 text-accent-foreground" aria-hidden="true" />
-                    </span>
-                    <h3 className="text-base font-semibold text-primary">{title}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{text}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
         </section>
 
         {/* OFFER */}
