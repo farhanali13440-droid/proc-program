@@ -8,8 +8,9 @@ export const WHATSAPP_LINK = "https://wa.me/923275991415";
 export function TopBar() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/70 bg-background/90 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
-        <Link to="/" className="flex flex-col leading-tight">
+      <div className="mx-auto grid max-w-5xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3">
+        <Link to="/" className="flex min-w-0 flex-col leading-tight">
+
           <span className="font-display text-lg font-semibold text-primary">
             Dr. Zaib Un Nisa
           </span>
@@ -21,11 +22,12 @@ export function TopBar() {
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-secondary"
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-secondary"
         >
           <MessageCircle className="size-3.5" aria-hidden="true" />
           WhatsApp
         </a>
+
       </div>
     </header>
   );
