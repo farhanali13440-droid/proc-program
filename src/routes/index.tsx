@@ -365,7 +365,7 @@ function LandingPage() {
 
 
         {/* PROGRAM */}
-        <section className="bg-primary py-14 text-primary-foreground">
+        <section className="bg-primary py-12 sm:py-16 text-primary-foreground">
           <div className="mx-auto max-w-3xl px-5">
             <div className="mb-8 space-y-3 text-center">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-foreground/70">
