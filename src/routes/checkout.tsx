@@ -175,7 +175,7 @@ function CheckoutPage() {
                     name="screenshot"
                     type="file"
                     accept="image/*"
-                    className="sr-only"
+                    className="sr-only hidden"
                     onChange={(e) => setFileName(e.target.files?.[0]?.name ?? "")}
                   />
                 </div>
