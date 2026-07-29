@@ -61,41 +61,42 @@ function CheckoutPage() {
     <div className="min-h-screen bg-background">
       <TopBar />
       <main className="bg-hero-soft">
-        <div className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
+        <div className="mx-auto max-w-2xl px-5 py-10 sm:py-14">
           <div className="mb-8 space-y-2 text-center">
             <h1 className="text-balance text-2xl font-semibold text-primary sm:text-3xl">
               Complete Your PCOS Consultation Booking
             </h1>
-            <p className="text-sm text-muted-foreground">
+            <p className="mx-auto max-w-md text-sm leading-relaxed text-muted-foreground">
               Fill in your details and share your payment confirmation. Our team will confirm your slot
               on WhatsApp.
             </p>
           </div>
 
           <Card className="mb-6 border-border shadow-card">
-            <CardContent className="flex flex-wrap items-center justify-between gap-3 p-5">
-              <div>
-                <p className="text-sm font-semibold text-primary">
-                  PCOS Consultation With Dr. Zaib Un Nisa
-                </p>
-                <p className="text-xs text-muted-foreground">10 minutes &middot; Mon–Sat, 9:00 AM – 1:00 PM</p>
-              </div>
-              <p className="font-display text-2xl font-semibold text-primary">PKR 500</p>
+            <CardContent className="space-y-1 p-6 text-center">
+              <p className="text-sm font-semibold text-primary">
+                PCOS Consultation With Dr. Zaib Un Nisa
+              </p>
+              <p className="text-xs text-muted-foreground">
+                MBBS, FCPS &middot; Consultant Gynaecologist
+              </p>
+              <p className="font-display text-3xl font-semibold text-primary">PKR 500</p>
+              <p className="text-xs text-muted-foreground">10 minutes &middot; Mon–Sat, 9:00 AM – 1:00 PM</p>
             </CardContent>
           </Card>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <Card className="border-border shadow-card">
-              <CardContent className="space-y-4 p-5 sm:p-6">
-                <h2 className="text-base font-semibold text-primary">Your Details</h2>
+              <CardContent className="space-y-5 p-6 sm:p-7">
+                <h2 className="text-center text-base font-semibold text-primary">Your Details</h2>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-1.5">
                     <Label htmlFor="fullName">Full Name</Label>
-                    <Input id="fullName" name="fullName" required autoComplete="name" />
+                    <Input id="fullName" name="fullName" required autoComplete="name" className="h-12 text-base" />
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="age">Age</Label>
-                    <Input id="age" name="age" type="number" min={12} max={80} required />
+                    <Input id="age" name="age" type="number" min={12} max={80} required className="h-12 text-base" />
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="whatsapp">WhatsApp Number</Label>
@@ -106,17 +107,18 @@ function CheckoutPage() {
                       inputMode="tel"
                       placeholder="03XX XXXXXXX"
                       required
+                      className="h-12 text-base"
                     />
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="city">City</Label>
-                    <Input id="city" name="city" required autoComplete="address-level2" />
+                    <Input id="city" name="city" required autoComplete="address-level2" className="h-12 text-base" />
                   </div>
                 </div>
                 <div className="space-y-1.5">
                   <Label htmlFor="concern">Main PCOS Concern</Label>
                   <Select value={concern} onValueChange={setConcern} required>
-                    <SelectTrigger id="concern" className="w-full">
+                    <SelectTrigger id="concern" className="h-12 w-full text-base">
                       <SelectValue placeholder="Select your main concern" />
                     </SelectTrigger>
                     <SelectContent>
@@ -132,8 +134,8 @@ function CheckoutPage() {
             </Card>
 
             <Card className="border-border shadow-card">
-              <CardContent className="space-y-4 p-5 sm:p-6">
-                <h2 className="text-base font-semibold text-primary">Payment Method</h2>
+              <CardContent className="space-y-5 p-6 sm:p-7">
+                <h2 className="text-center text-base font-semibold text-primary">Payment Method</h2>
                 <div className="grid gap-3 sm:grid-cols-3">
                   {[
                     { icon: Building2, label: "Bank Transfer" },
@@ -142,15 +144,15 @@ function CheckoutPage() {
                   ].map(({ icon: Icon, label }) => (
                     <div
                       key={label}
-                      className="flex items-center gap-2 rounded-xl border border-border bg-secondary/60 px-3 py-2.5 text-sm font-medium text-primary"
+                      className="flex items-center justify-center gap-2 rounded-xl border border-border bg-secondary/60 px-3 py-3 text-sm font-medium text-primary"
                     >
-                      <Icon className="size-4" aria-hidden="true" />
+                      <Icon className="size-4 shrink-0" aria-hidden="true" />
                       {label}
                     </div>
                   ))}
                 </div>
 
-                <div className="space-y-1 rounded-xl bg-accent/50 p-4 text-sm">
+                <div className="space-y-1 rounded-xl bg-accent/50 p-5 text-center text-sm">
                   <p className="font-semibold text-primary">Bank Details</p>
                   <p className="text-foreground/85">Meezan Bank</p>
                   <p className="break-all text-foreground/85">
@@ -163,9 +165,9 @@ function CheckoutPage() {
                   <Label htmlFor="screenshot">Payment Screenshot Upload</Label>
                   <label
                     htmlFor="screenshot"
-                    className="flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-border bg-background px-4 py-5 text-sm text-muted-foreground transition-colors hover:bg-secondary/60"
+                    className="flex cursor-pointer flex-col items-center gap-2 rounded-xl border border-dashed border-border bg-background px-4 py-6 text-center text-sm text-muted-foreground transition-colors hover:bg-secondary/60"
                   >
-                    <Upload className="size-4 shrink-0" aria-hidden="true" />
+                    <Upload className="size-5 shrink-0" aria-hidden="true" />
                     <span>{fileName || "Tap to upload your payment screenshot (JPG or PNG)"}</span>
                   </label>
                   <Input
@@ -173,7 +175,7 @@ function CheckoutPage() {
                     name="screenshot"
                     type="file"
                     accept="image/*"
-                    className="sr-only"
+                    className="sr-only hidden"
                     onChange={(e) => setFileName(e.target.files?.[0]?.name ?? "")}
                   />
                 </div>
@@ -189,12 +191,12 @@ function CheckoutPage() {
               Confirm My Consultation Booking
             </Button>
 
-            <ul className="grid gap-2 sm:grid-cols-2">
+            <ul className="mx-auto grid max-w-md gap-2.5 sm:grid-cols-2">
               <TickItem>Your details are used only to confirm your appointment</TickItem>
               <TickItem>Confirmation shared on WhatsApp by our team</TickItem>
             </ul>
-            <p className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
-              <ShieldCheck className="size-3.5" aria-hidden="true" />
+            <p className="flex items-center justify-center gap-2 text-center text-xs text-muted-foreground">
+              <ShieldCheck className="size-3.5 shrink-0" aria-hidden="true" />
               Booking request only &mdash; no medical advice is given before consultation.
             </p>
           </form>
@@ -205,3 +207,4 @@ function CheckoutPage() {
     </div>
   );
 }
+

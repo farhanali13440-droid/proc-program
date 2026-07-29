@@ -141,19 +141,22 @@ const faqs = [
   },
 ];
 
-function BookButton({ label = "Book Your PCOS Consultation For PKR 500" }: { label?: string }) {
+function BookButton({ label = "Book PCOS Consultation — PKR 500" }: { label?: string }) {
   return (
-    <Button
-      asChild
-      size="lg"
-      className="h-auto w-full rounded-full px-6 py-4 text-base font-semibold shadow-soft sm:w-auto"
-    >
-      <Link to="/checkout" onClick={() => trackInitiateCheckout()}>
-        {label}
-      </Link>
-    </Button>
+    <div className="flex w-full justify-center">
+      <Button
+        asChild
+        size="lg"
+        className="h-auto w-full max-w-md rounded-full px-6 py-4 text-center text-base font-semibold leading-snug shadow-soft"
+      >
+        <Link to="/checkout" onClick={() => trackInitiateCheckout()}>
+          {label}
+        </Link>
+      </Button>
+    </div>
   );
 }
+
 
 function LandingPage() {
   return (
@@ -162,51 +165,49 @@ function LandingPage() {
       <main>
         {/* HERO */}
         <section className="bg-hero-soft">
-          <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-            <div className="grid items-center gap-10 md:grid-cols-2">
-              <div className="space-y-6">
-                <span className="inline-flex items-center gap-2 rounded-full bg-background px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary shadow-card">
-                  <BadgeCheck className="size-3.5 text-gold-foreground" aria-hidden="true" />
-                  PCOS Care Consultation
-                </span>
-                <h1 className="text-balance text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-[2.75rem]">
-                  PCOS Ko Samjhein, Manage Karein Aur Apni Health Ke Liye Sahi Treatment Plan Shuru
-                  Karein
-                </h1>
-                <p className="text-pretty text-sm leading-relaxed text-foreground/80 sm:text-base">
-                  A personalized PCOS consultation with{" "}
-                  <strong className="font-semibold text-primary">Dr. Zaib Un Nisa (MBBS, FCPS)</strong>,
-                  Consultant Gynaecologist &amp; Obstetrician. Understand your symptoms, get medical
-                  guidance, dietary counselling and a personalized treatment approach.
-                </p>
-                <BookButton />
-                <ul className="grid gap-2 sm:grid-cols-2">
-                  {badges.map((b) => (
-                    <TickItem key={b}>{b}</TickItem>
-                  ))}
-                </ul>
-              </div>
-              <div className="relative">
-                <div className="absolute -inset-3 rounded-[2rem] bg-accent/50 blur-2xl" aria-hidden="true" />
+          <div className="mx-auto max-w-3xl px-5 py-12 text-center sm:py-16">
+            <div className="flex flex-col items-center gap-6">
+              <span className="inline-flex items-center gap-2 rounded-full bg-background px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary shadow-card">
+                <BadgeCheck className="size-3.5 text-gold-foreground" aria-hidden="true" />
+                PCOS Care Consultation
+              </span>
+              <h1 className="text-balance text-[1.75rem] font-semibold leading-tight text-primary sm:text-4xl">
+                PCOS Ko Samjhein, Manage Karein Aur Apni Health Ke Liye Sahi Treatment Plan Shuru
+                Karein
+              </h1>
+              <p className="mx-auto max-w-xl text-pretty text-[0.95rem] leading-relaxed text-foreground/80">
+                A personalized PCOS consultation with{" "}
+                <strong className="font-semibold text-primary">Dr. Zaib Un Nisa (MBBS, FCPS)</strong>,
+                Consultant Gynaecologist &amp; Obstetrician — understand your symptoms and get a
+                personalized treatment approach.
+              </p>
+              <BookButton />
+              <div className="relative w-full">
                 <img
                   src={heroConsultation.url}
                   alt="Dr. Zaib Un Nisa consulting a patient about PCOS at Al-Qamar Hospital"
                   width={1664}
                   height={936}
-                  className="relative w-full rounded-3xl shadow-soft"
+                  className="w-full rounded-3xl shadow-soft"
                 />
-                <div className="relative -mt-8 mx-4 rounded-2xl border border-border bg-background/95 p-4 text-center shadow-card backdrop-blur">
+                <div className="relative mx-4 -mt-8 rounded-2xl border border-border bg-background/95 p-4 text-center shadow-card backdrop-blur">
                   <p className="font-display text-lg font-semibold text-primary">Al-Qamar Hospital</p>
                   <p className="text-xs text-muted-foreground">Railway Road, Shakargarh</p>
                 </div>
               </div>
+              <ul className="mx-auto grid w-full max-w-md gap-2.5 sm:grid-cols-2">
+                {badges.map((b) => (
+                  <TickItem key={b}>{b}</TickItem>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
 
+
         {/* SYMPTOMS VISUAL */}
-        <section className="bg-secondary/50 py-14 sm:py-16">
-          <div className="mx-auto max-w-5xl px-4">
+        <section className="bg-secondary/50 py-12 sm:py-16">
+          <div className="mx-auto max-w-5xl px-5">
             <SectionTitle
               eyebrow="Symptoms"
               title="Are You Experiencing These PCOS Symptoms?"
@@ -226,8 +227,8 @@ function LandingPage() {
         </section>
 
         {/* GUIDANCE */}
-        <section className="py-14 sm:py-16">
-          <div className="mx-auto max-w-5xl px-4">
+        <section className="py-12 sm:py-16">
+          <div className="mx-auto max-w-5xl px-5">
             <SectionTitle
               eyebrow="Why Many Women Struggle"
               title="Random Advice Doesn't Replace Proper Medical Guidance"
@@ -252,7 +253,7 @@ function LandingPage() {
         </section>
 
         {/* OFFER */}
-        <section className="mx-auto max-w-5xl px-4 py-14">
+        <section className="mx-auto max-w-5xl px-5 py-12 sm:py-16">
           <SectionTitle eyebrow="The Offer" title="PCOS Consultation — Only PKR 500" />
           <Card className="overflow-hidden border-border shadow-soft">
             <div className="bg-gold-gradient px-6 py-5 text-center">
@@ -263,7 +264,7 @@ function LandingPage() {
             </div>
             <CardContent className="space-y-6 p-6 sm:p-8">
               <div>
-                <p className="mb-3 text-sm font-semibold text-primary">Your consultation includes:</p>
+                <p className="mb-3 text-center text-sm font-semibold text-primary sm:text-left">Your consultation includes:</p>
                 <ul className="grid gap-2.5 sm:grid-cols-2">
                   {offerIncludes.map((i) => (
                     <TickItem key={i}>{i}</TickItem>
@@ -293,8 +294,8 @@ function LandingPage() {
         </section>
 
         {/* 3-STEP PROCESS VISUAL */}
-        <section className="bg-secondary/50 py-14 sm:py-16">
-          <div className="mx-auto max-w-5xl px-4">
+        <section className="bg-secondary/50 py-12 sm:py-16">
+          <div className="mx-auto max-w-5xl px-5">
             <SectionTitle
               eyebrow="Process"
               title="How Your PCOS Consultation Works"
@@ -314,15 +315,15 @@ function LandingPage() {
         </section>
 
         {/* DOCTOR */}
-        <section className="mx-auto max-w-5xl px-4 py-14">
+        <section className="mx-auto max-w-5xl px-5 py-12 sm:py-16">
           <SectionTitle eyebrow="Your Doctor" title="Meet Your PCOS Specialist" />
           <Card className="border-border shadow-card">
             <CardContent className="space-y-5 p-6 sm:p-8">
-              <p className="text-sm leading-relaxed text-foreground/85">
+              <p className="text-center text-sm leading-relaxed text-foreground/85 sm:text-left">
                 Dr. Zaib Un Nisa is a Consultant Gynaecologist &amp; Obstetrician providing
                 individualized care for women dealing with hormonal and reproductive health concerns.
               </p>
-              <p className="text-sm font-medium text-primary">Her approach focuses on:</p>
+              <p className="text-center text-sm font-medium text-primary sm:text-left">Her approach focuses on:</p>
               <ul className="grid gap-2.5 sm:grid-cols-2">
                 {[
                   "Understanding your symptoms",
@@ -341,12 +342,12 @@ function LandingPage() {
 
 
         {/* WHO IS THIS FOR */}
-        <section className="bg-secondary/50 py-14">
-          <div className="mx-auto max-w-3xl px-4">
+        <section className="bg-secondary/50 py-12 sm:py-16">
+          <div className="mx-auto max-w-3xl px-5">
             <SectionTitle eyebrow="Suitability" title="Who Is This For?" />
             <Card className="border-border bg-background shadow-card">
               <CardContent className="space-y-5 p-6 sm:p-8">
-                <p className="text-sm text-muted-foreground">
+                <p className="text-center text-sm text-muted-foreground sm:text-left">
                   This consultation is suitable for women:
                 </p>
                 <ul className="grid gap-2.5 sm:grid-cols-2">
@@ -364,8 +365,8 @@ function LandingPage() {
 
 
         {/* PROGRAM */}
-        <section className="bg-primary py-14 text-primary-foreground">
-          <div className="mx-auto max-w-3xl px-4">
+        <section className="bg-primary py-12 sm:py-16 text-primary-foreground">
+          <div className="mx-auto max-w-3xl px-5">
             <div className="mb-8 space-y-3 text-center">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-foreground/70">
                 Continued Care
@@ -397,7 +398,7 @@ function LandingPage() {
         </section>
 
         {/* BENEFITS */}
-        <section className="mx-auto max-w-3xl px-4 py-14">
+        <section className="mx-auto max-w-3xl px-5 py-12 sm:py-16">
           <SectionTitle eyebrow="Expected Outcomes" title="The Program Focuses On Helping Women:" />
           <ul className="grid gap-2.5 sm:grid-cols-2">
             {benefits.map((i) => (
@@ -411,12 +412,12 @@ function LandingPage() {
         </section>
 
         {/* WHY CHOOSE */}
-        <section className="bg-secondary/50 py-14">
-          <div className="mx-auto max-w-3xl px-4">
+        <section className="bg-secondary/50 py-12 sm:py-16">
+          <div className="mx-auto max-w-3xl px-5">
             <SectionTitle eyebrow="Why Dr. Zaib Un Nisa" title="Evidence-Based Personalized Care" />
             <Card className="border-border bg-background shadow-card">
               <CardContent className="space-y-4 p-6 sm:p-8">
-                <p className="text-sm leading-relaxed text-foreground/85">
+                <p className="text-center text-sm leading-relaxed text-foreground/85 sm:text-left">
                   Every woman experiences PCOS differently. Dr. Zaib Un Nisa focuses on creating
                   personalized care plans based on:
                 </p>
@@ -433,8 +434,8 @@ function LandingPage() {
         </section>
 
         {/* CARE PROGRAM VISUAL */}
-        <section className="py-14 sm:py-16">
-          <div className="mx-auto max-w-5xl px-4">
+        <section className="py-12 sm:py-16">
+          <div className="mx-auto max-w-5xl px-5">
             <SectionTitle
               eyebrow="Next Step"
               title="Continue Your PCOS Journey With Personalized Support"
@@ -454,7 +455,7 @@ function LandingPage() {
         </section>
 
         {/* FAQ */}
-        <section className="mx-auto max-w-3xl px-4 py-14">
+        <section className="mx-auto max-w-3xl px-5 py-12 sm:py-16">
           <SectionTitle eyebrow="FAQ" title="Common Questions About PCOS" />
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((f, i) => (
@@ -471,8 +472,8 @@ function LandingPage() {
         </section>
 
         {/* TESTIMONIALS VISUAL */}
-        <section className="bg-secondary/50 py-14 sm:py-16">
-          <div className="mx-auto max-w-5xl px-4">
+        <section className="bg-secondary/50 py-12 sm:py-16">
+          <div className="mx-auto max-w-5xl px-5">
             <SectionTitle
               eyebrow="Patient Experience"
               title="What Women Say About Their Experience"
@@ -492,8 +493,8 @@ function LandingPage() {
         </section>
 
         {/* FINAL CTA */}
-        <section className="bg-hero-soft py-14">
-          <div className="mx-auto max-w-2xl space-y-5 px-4 text-center">
+        <section className="bg-hero-soft py-12 sm:py-16">
+          <div className="mx-auto max-w-2xl space-y-5 px-5 text-center">
             <h2 className="text-balance text-2xl font-semibold text-primary sm:text-3xl">
               Start Your PCOS Care Journey Today
             </h2>
