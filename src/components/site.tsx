@@ -34,16 +34,16 @@ export function TopBar() {
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-secondary/60">
-      <div className="mx-auto max-w-5xl space-y-4 px-4 py-10 text-sm text-muted-foreground">
+      <div className="mx-auto max-w-5xl space-y-4 px-5 py-10 text-center text-sm text-muted-foreground sm:text-left">
         <div>
           <p className="font-display text-xl text-primary">Dr. Zaib Un Nisa</p>
           <p>MBBS, FCPS &mdash; Consultant Gynaecologist &amp; Obstetrician</p>
         </div>
-        <p className="flex items-start gap-2">
+        <p className="flex items-start justify-center gap-2 sm:justify-start">
           <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
           Al-Qamar Hospital, Railway Road, Shakargarh
         </p>
-        <p className="flex items-center gap-2">
+        <p className="flex items-center justify-center gap-2 sm:justify-start">
           <Phone className="size-4 shrink-0" aria-hidden="true" />
           WhatsApp: {WHATSAPP_NUMBER}
         </p>
@@ -58,16 +58,18 @@ export function SiteFooter() {
   );
 }
 
+
 export function TickItem({ children }: { children: ReactNode }) {
   return (
-    <li className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/90">
+    <li className="flex items-start justify-center gap-2.5 text-center text-sm leading-relaxed text-foreground/90 sm:justify-start sm:text-left">
       <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent">
         <Check className="size-3 text-accent-foreground" aria-hidden="true" />
       </span>
-      <span>{children}</span>
+      <span className="min-w-0">{children}</span>
     </li>
   );
 }
+
 
 export function SectionTitle({
   eyebrow,
