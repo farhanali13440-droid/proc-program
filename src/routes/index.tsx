@@ -229,31 +229,6 @@ function LandingPage() {
           </div>
         </section>
 
-        {/* DOCTOR */}
-        <section className="mx-auto max-w-5xl px-4 py-14">
-          <SectionTitle eyebrow="Your Doctor" title="Meet Your PCOS Specialist" />
-          <Card className="border-border shadow-card">
-            <CardContent className="space-y-5 p-6 sm:p-8">
-              <p className="text-sm leading-relaxed text-foreground/85">
-                Dr. Zaib Un Nisa is a Consultant Gynaecologist &amp; Obstetrician providing
-                individualized care for women dealing with hormonal and reproductive health concerns.
-              </p>
-              <p className="text-sm font-medium text-primary">Her approach focuses on:</p>
-              <ul className="grid gap-2.5 sm:grid-cols-2">
-                {[
-                  "Understanding your symptoms",
-                  "Proper diagnosis",
-                  "Personalized treatment planning",
-                  "Lifestyle modification",
-                  "Long-term health improvement",
-                ].map((i) => (
-                  <TickItem key={i}>{i}</TickItem>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </section>
-
         {/* SYMPTOMS VISUAL */}
         <section className="bg-secondary/50 py-14 sm:py-16">
           <div className="mx-auto max-w-5xl px-4">
@@ -299,6 +274,31 @@ function LandingPage() {
               ))}
             </ul>
           </div>
+        </section>
+
+        {/* DOCTOR */}
+        <section className="mx-auto max-w-5xl px-4 py-14">
+          <SectionTitle eyebrow="Your Doctor" title="Meet Your PCOS Specialist" />
+          <Card className="border-border shadow-card">
+            <CardContent className="space-y-5 p-6 sm:p-8">
+              <p className="text-sm leading-relaxed text-foreground/85">
+                Dr. Zaib Un Nisa is a Consultant Gynaecologist &amp; Obstetrician providing
+                individualized care for women dealing with hormonal and reproductive health concerns.
+              </p>
+              <p className="text-sm font-medium text-primary">Her approach focuses on:</p>
+              <ul className="grid gap-2.5 sm:grid-cols-2">
+                {[
+                  "Understanding your symptoms",
+                  "Proper diagnosis",
+                  "Personalized treatment planning",
+                  "Lifestyle modification",
+                  "Long-term health improvement",
+                ].map((i) => (
+                  <TickItem key={i}>{i}</TickItem>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
         </section>
 
         {/* OFFER */}
