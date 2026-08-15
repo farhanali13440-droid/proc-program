@@ -316,13 +316,25 @@ function LandingPage() {
 
         {/* DOCTOR */}
         <section className="mx-auto max-w-5xl px-5 py-12 sm:py-16">
-          <SectionTitle eyebrow="Your Doctor" title="Meet Your PCOS Specialist" />
+          <SectionTitle eyebrow="Your Doctor" title="Meet Your Specialist" />
           <Card className="border-border shadow-card">
             <CardContent className="space-y-5 p-6 sm:p-8">
-              <p className="text-center text-sm leading-relaxed text-foreground/85 sm:text-left">
-                Dr. Syed Hammad Wajid Talha is a Gastroenterologist &amp; Hepatologist providing
-                individualized care for women dealing with hormonal and reproductive health concerns.
-              </p>
+              <div className="text-center sm:text-left">
+                <p className="font-display text-xl font-semibold text-primary">
+                  Dr. Syed Hammad Wajid Talha
+                </p>
+                <p className="text-sm text-muted-foreground">Gastroenterologist, Hepatologist</p>
+              </div>
+              <ul className="grid gap-2.5 sm:grid-cols-2">
+                {[
+                  "M.B.B.S. — Rawalpindi Medical College, Pakistan, 2011",
+                  "F.C.P.S. — College of Physicians & Surgeons Pakistan (CPSP), Pakistan, 2020",
+                  "Experience: 6 Yrs",
+                ].map((i) => (
+                  <TickItem key={i}>{i}</TickItem>
+                ))}
+              </ul>
+
               <p className="text-center text-sm font-medium text-primary sm:text-left">His approach focuses on:</p>
               <ul className="grid gap-2.5 sm:grid-cols-2">
                 {[
