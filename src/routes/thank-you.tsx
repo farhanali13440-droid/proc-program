@@ -13,16 +13,16 @@ export const Route = createFileRoute("/thank-you")({
   component: ThankYouPage,
   head: () => ({
     meta: [
-      { title: "Booking Received — PCOS Consultation | Dr. Syed Hammad Wajid Talha" },
+      { title: "Booking Received — PCOS Consultation | Dr. Zaib-un-Nisa" },
       {
         name: "description",
         content:
-          "Your PCOS consultation request with Dr. Syed Hammad Wajid Talha has been received. Our team will confirm your appointment on WhatsApp.",
+          "Your PCOS consultation request with Dr. Zaib-un-Nisa has been received. Our team will confirm your appointment on WhatsApp.",
       },
       { property: "og:title", content: "Your PCOS Consultation Request Has Been Received" },
       {
         property: "og:description",
-        content: "Thank you for booking with Dr. Syed Hammad Wajid Talha. We will confirm your slot on WhatsApp.",
+        content: "Thank you for booking with Dr. Zaib-un-Nisa. We will confirm your slot on WhatsApp.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -46,7 +46,7 @@ function ThankYouPage() {
                 Your PCOS Consultation Request Has Been Received
               </h1>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Thank you for booking your consultation with Dr. Syed Hammad Wajid Talha. Our team will contact you
+                Thank you for booking your consultation with Dr. Zaib-un-Nisa. Our team will contact you
                 on WhatsApp to confirm your appointment.
               </p>
               <div className="space-y-2">
