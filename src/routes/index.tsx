@@ -59,7 +59,7 @@ export const Route = createFileRoute("/")({
             "Consultant Gynaecologist & Obstetrician offering PCOS consultation and personalised care planning.",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Al-Qamar Hospital, Railway Road",
+            streetAddress: "Al-Qamar Hospital, Railway Road, Near Bank of Punjab",
             addressLocality: "Shakargarh",
             addressCountry: "PK",
           },

@@ -45,7 +45,7 @@ export function SiteFooter() {
         </div>
         <p className="flex items-start justify-center gap-2 sm:justify-start">
           <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-          Al-Qamar Hospital, Railway Road, Shakargarh
+          Al-Qamar Hospital, Railway Road, Shakargarh (Near Bank of Punjab)
         </p>
         <p className="flex items-center justify-center gap-2 sm:justify-start">
           <Phone className="size-4 shrink-0" aria-hidden="true" />
