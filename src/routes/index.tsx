@@ -191,6 +191,10 @@ function LandingPage() {
                   className="w-full rounded-3xl shadow-soft"
                 />
               </div>
+              <div className="w-full rounded-2xl border border-gold-100 bg-background px-5 py-4 text-left shadow-card">
+                <p className="text-base font-semibold text-primary">Dr. Zaib-un-Nisa</p>
+                <p className="text-sm text-foreground/80">Consultant Gynaecologist &amp; Obstetrician</p>
+              </div>
               <ul className="mx-auto grid w-full max-w-md gap-2.5 sm:grid-cols-2">
                 {badges.map((b) => (
                   <TickItem key={b}>{b}</TickItem>
