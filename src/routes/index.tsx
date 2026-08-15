@@ -54,7 +54,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Physician",
           name: "Dr. Syed Hammad Wajid Talha",
-          medicalSpecialty: "Obstetrics and Gynecology",
+          medicalSpecialty: "Gastroenterology",
           description:
             "Gastroenterologist & Hepatologist offering PCOS consultation and personalised care planning.",
           address: {
@@ -323,7 +323,7 @@ function LandingPage() {
                 Dr. Syed Hammad Wajid Talha is a Gastroenterologist &amp; Hepatologist providing
                 individualized care for women dealing with hormonal and reproductive health concerns.
               </p>
-              <p className="text-center text-sm font-medium text-primary sm:text-left">Her approach focuses on:</p>
+              <p className="text-center text-sm font-medium text-primary sm:text-left">His approach focuses on:</p>
               <ul className="grid gap-2.5 sm:grid-cols-2">
                 {[
                   "Understanding your symptoms",
