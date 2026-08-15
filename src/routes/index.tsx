@@ -175,7 +175,7 @@ function LandingPage() {
                 PCOS Ko Samjhein, Manage Karein Aur Apni Health Ke Liye Sahi Treatment Plan Shuru
                 Karein
               </h1>
-              <p className="mx-auto max-w-xl text-pretty text-[0.95rem] leading-relaxed text-foreground/80">
+              <p className="mx-auto max-w-xl text-pretty text-left text-[0.95rem] leading-relaxed text-foreground/80">
                 A personalized PCOS consultation with{" "}
                 <strong className="font-semibold text-primary">Dr. Zaib-un-Nisa (MBBS, FCPS)</strong>,
                 Consultant Gynaecologist &amp; Obstetrician — understand your symptoms and get a
