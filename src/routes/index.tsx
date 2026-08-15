@@ -32,17 +32,17 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
   head: () => ({
     meta: [
-      { title: "PCOS Consultation PKR 500 | Dr. Syed Hammad Wajid Talha, Gastroenterologist" },
+      { title: "PCOS Consultation PKR 700 | Dr. Syed Hammad Wajid Talha, Gastroenterologist" },
       {
         name: "description",
         content:
-          "Book a PKR 500 PCOS consultation with Dr. Syed Hammad Wajid Talha (MBBS, FCPS), Gastroenterologist, Hepatologist at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
+          "Book a PKR 700 PCOS consultation with Dr. Syed Hammad Wajid Talha (MBBS, FCPS), Gastroenterologist, Hepatologist at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
       },
-      { property: "og:title", content: "PCOS Consultation PKR 500 | Dr. Syed Hammad Wajid Talha, Gastroenterologist" },
+      { property: "og:title", content: "PCOS Consultation PKR 700 | Dr. Syed Hammad Wajid Talha, Gastroenterologist" },
       {
         property: "og:description",
         content:
-          "Book a PKR 500 PCOS consultation with Dr. Syed Hammad Wajid Talha (MBBS, FCPS), Gastroenterologist, Hepatologist at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
+          "Book a PKR 700 PCOS consultation with Dr. Syed Hammad Wajid Talha (MBBS, FCPS), Gastroenterologist, Hepatologist at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -141,7 +141,7 @@ const faqs = [
   },
 ];
 
-function BookButton({ label = "Book PCOS Consultation — PKR 500" }: { label?: string }) {
+function BookButton({ label = "Book PCOS Consultation — PKR 700" }: { label?: string }) {
   return (
     <div className="flex w-full justify-center">
       <Button
@@ -191,16 +191,11 @@ function LandingPage() {
                   className="w-full rounded-3xl shadow-soft"
                 />
                 <div className="relative mx-4 -mt-8 rounded-2xl border border-border bg-background/95 p-4 text-center shadow-card backdrop-blur">
-                  <p className="font-display text-lg font-semibold text-primary">Al-Qamar Hospital</p>
-                  <p className="text-xs text-muted-foreground">Railway Road, Shakargarh</p>
-                  <div className="my-2 h-px w-full bg-border" />
-                  <p className="font-display text-sm font-semibold text-primary">Dr. Syed Hammad Wajid Talha</p>
+                  <p className="font-display text-lg font-semibold text-primary">Dr. Syed Hammad Wajid Talha</p>
                   <p className="text-xs text-muted-foreground">Gastroenterologist, Hepatologist</p>
-                  <p className="mt-1 text-[11px] leading-snug text-muted-foreground/80">
-                    M.B.B.S. - Rawalpindi Medical College, Pakistan, 2011
-                    <br />
-                    F.C.P.S. - College of Physicians &amp; Surgeons Pakistan (CPSP), Pakistan, 2020
-                  </p>
+                  <div className="my-2 h-px w-full bg-border" />
+                  <p className="font-display text-sm font-semibold text-primary">Al-Qamar Hospital</p>
+                  <p className="text-xs text-muted-foreground">Railway Road, Shakargarh</p>
                 </div>
               </div>
               <ul className="mx-auto grid w-full max-w-md gap-2.5 sm:grid-cols-2">
@@ -262,10 +257,10 @@ function LandingPage() {
 
         {/* OFFER */}
         <section className="mx-auto max-w-5xl px-5 py-12 sm:py-16">
-          <SectionTitle eyebrow="The Offer" title="PCOS Consultation — Only PKR 500" />
+          <SectionTitle eyebrow="The Offer" title="PCOS Consultation — Only PKR 700" />
           <Card className="overflow-hidden border-border shadow-soft">
             <div className="bg-gold-gradient px-6 py-5 text-center">
-              <p className="font-display text-3xl font-semibold text-gold-foreground">PKR 500</p>
+              <p className="font-display text-3xl font-semibold text-gold-foreground">PKR 700</p>
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold-foreground/80">
                 One-to-one consultation
               </p>
@@ -404,7 +399,7 @@ function LandingPage() {
                   </h3>
                   <p className="mt-1 font-display text-3xl font-semibold text-primary">PKR 14,500</p>
                   <p className="mt-2 rounded-xl bg-accent/60 p-3 text-xs font-medium text-accent-foreground">
-                    Your PKR 500 consultation fee will be adjusted if you enroll within 7 days.
+                    Your PKR 700 consultation fee will be adjusted if you enroll within 7 days.
                   </p>
                 </div>
                 <ul className="grid gap-2.5 sm:grid-cols-2">
@@ -519,7 +514,7 @@ function LandingPage() {
               Start Your PCOS Care Journey Today
             </h2>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Reserve your 15-minute consultation with Dr. Syed Hammad Wajid Talha for PKR 500 and get clarity on
+              Reserve your 15-minute consultation with Dr. Syed Hammad Wajid Talha for PKR 700 and get clarity on
               your next steps.
             </p>
             <div className="flex justify-center">
