@@ -47,7 +47,12 @@ export function SiteFooter() {
         </p>
         <p className="flex items-center justify-center gap-2 sm:justify-start">
           <Phone className="size-4 shrink-0" aria-hidden="true" />
-          WhatsApp: {WHATSAPP_NUMBER}
+          <span>
+            WhatsApp:{" "}
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+              {WHATSAPP_NUMBER}
+            </a>
+          </span>
         </p>
         <p className="text-xs leading-relaxed">
           This website provides general health information and appointment booking only. It is not a
