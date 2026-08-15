@@ -2,8 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { Check, MessageCircle, Phone, MapPin } from "lucide-react";
 import type { ReactNode } from "react";
 
-export const WHATSAPP_NUMBER = "03275991415";
-export const WHATSAPP_LINK = "https://wa.me/923275991415";
+export const WHATSAPP_NUMBER = "+92 333 6583649";
+export const WHATSAPP_LINK = "https://wa.me/923336583649";
 
 export function TopBar() {
   return (
