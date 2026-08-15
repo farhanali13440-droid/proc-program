@@ -44,6 +44,42 @@ const concerns = [
   "Other",
 ];
 
+const paymentMethods = [
+  { id: "bank", icon: Building2, label: "Bank Transfer" },
+  { id: "easypaisa", icon: Smartphone, label: "Easypaisa" },
+  { id: "jazzcash", icon: Smartphone, label: "JazzCash" },
+] as const;
+
+type PaymentMethodId = (typeof paymentMethods)[number]["id"];
+
+const paymentDetails: Record<PaymentMethodId, { title: string; lines: string[] }> = {
+  bank: {
+    title: "Bank Details",
+    lines: [
+      "Meezan Bank",
+      "Account Number: PK04MEZN0098400115140340",
+      "Account Name: Muhammad Sohail Iqbal Qamar",
+    ],
+  },
+  easypaisa: {
+    title: "Easypaisa Details",
+    lines: [
+      "Easypaisa Account",
+      "Account Number: 0327 5991415",
+      "Account Name: Muhammad Sohail Iqbal Qamar",
+    ],
+  },
+  jazzcash: {
+    title: "JazzCash Details",
+    lines: [
+      "JazzCash Account",
+      "Account Number: 0327 5991415",
+      "Account Name: Muhammad Sohail Iqbal Qamar",
+    ],
+  },
+};
+
+
 function CheckoutPage() {
   const navigate = useNavigate();
   const [concern, setConcern] = useState("");
