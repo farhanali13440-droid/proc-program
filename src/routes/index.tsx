@@ -63,7 +63,7 @@ export const Route = createFileRoute("/")({
             addressLocality: "Shakargarh",
             addressCountry: "PK",
           },
-          telephone: "+923275991415",
+          telephone: "+923336583649",
         }),
       },
     ],
