@@ -45,7 +45,7 @@ function ThankYouPage() {
               <h1 className="text-balance text-2xl font-semibold text-primary sm:text-3xl">
                 Your PCOS Consultation Request Has Been Received
               </h1>
-              <p className="text-sm leading-relaxed text-muted-foreground">
+              <p className="text-left text-sm leading-relaxed text-muted-foreground">
                 Thank you for booking your consultation with Dr. Zaib-un-Nisa. Our team will contact you
                 on WhatsApp to confirm your appointment.
               </p>
@@ -59,7 +59,7 @@ function ThankYouPage() {
                   <MessageCircle className="size-5" aria-hidden="true" />
                   Chat On WhatsApp
                 </a>
-                <p className="text-xs text-muted-foreground">WhatsApp: {WHATSAPP_NUMBER}</p>
+                <p className="text-center text-xs text-muted-foreground">WhatsApp: {WHATSAPP_NUMBER}</p>
               </div>
               <div className="rounded-xl bg-secondary p-4 text-left text-sm text-foreground/85">
                 <p className="mb-1 font-semibold text-primary">What happens next</p>

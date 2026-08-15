@@ -105,7 +105,7 @@ function CheckoutPage() {
             <h1 className="text-balance text-2xl font-semibold text-primary sm:text-3xl">
               Complete Your PCOS Consultation Booking
             </h1>
-            <p className="mx-auto max-w-md text-sm leading-relaxed text-muted-foreground">
+            <p className="mx-auto max-w-md text-left text-sm leading-relaxed text-muted-foreground">
               Fill in your details and share your payment confirmation. Our team will confirm your slot
               on WhatsApp.
             </p>
@@ -197,7 +197,7 @@ function CheckoutPage() {
                   })}
                 </div>
 
-                <div className="space-y-1 rounded-xl bg-accent/50 p-5 text-center text-sm">
+                <div className="space-y-1 rounded-xl bg-accent/50 p-5 text-left text-sm">
                   <p className="font-semibold text-primary">{activeDetails.title}</p>
                   {activeDetails.lines.map((line) => (
                     <p key={line} className="break-all text-foreground/85">
@@ -241,7 +241,7 @@ function CheckoutPage() {
               <TickItem>Your details are used only to confirm your appointment</TickItem>
               <TickItem>Confirmation shared on WhatsApp by our team</TickItem>
             </ul>
-            <p className="flex items-center justify-center gap-2 text-center text-xs text-muted-foreground">
+            <p className="flex items-start justify-start gap-2 text-left text-xs text-muted-foreground">
               <ShieldCheck className="size-3.5 shrink-0" aria-hidden="true" />
               Booking request only &mdash; no medical advice is given before consultation.
             </p>
