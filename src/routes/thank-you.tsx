@@ -51,16 +51,15 @@ function ThankYouPage() {
                 on WhatsApp to confirm your appointment.
               </p>
               <div className="space-y-2">
-                <Button
-                  asChild
-                  size="lg"
-                  className="h-auto w-full rounded-full px-6 py-4 text-base font-semibold shadow-soft"
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-auto w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-4 text-base font-semibold text-primary-foreground shadow-soft transition-colors hover:bg-primary/90"
                 >
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="size-5" aria-hidden="true" />
-                    Chat On WhatsApp
-                  </a>
-                </Button>
+                  <MessageCircle className="size-5" aria-hidden="true" />
+                  Chat On WhatsApp
+                </a>
                 <p className="text-xs text-muted-foreground">WhatsApp: {WHATSAPP_NUMBER}</p>
               </div>
               <div className="rounded-xl bg-secondary p-4 text-left text-sm text-foreground/85">
