@@ -195,7 +195,8 @@ function LandingPage() {
                   <p className="text-xs text-muted-foreground">Consultant Gynaecologist &amp; Obstetrician</p>
                   <div className="my-2 h-px w-full bg-border" />
                   <p className="font-display text-sm font-semibold text-primary">Al-Qamar Hospital</p>
-                  <p className="text-xs text-muted-foreground">Railway Road, Shakargarh</p>
+                  <p className="text-xs text-muted-foreground">Railway Road, Shakargarh &middot; Near Bank of Punjab</p>
+                  <p className="text-xs text-muted-foreground">Daily, 9:00 AM – 1:00 PM</p>
                 </div>
               </div>
               <ul className="mx-auto grid w-full max-w-md gap-2.5 sm:grid-cols-2">
