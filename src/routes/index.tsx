@@ -32,17 +32,17 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
   head: () => ({
     meta: [
-      { title: "PCOS Consultation PKR 500 | Dr. Zaib Un Nisa, Gynaecologist" },
+      { title: "PCOS Consultation PKR 500 | Dr. Syed Hammad Wajid Talha, Gastroenterologist" },
       {
         name: "description",
         content:
-          "Book a PKR 500 PCOS consultation with Dr. Zaib Un Nisa (MBBS, FCPS), Consultant Gynaecologist at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
+          "Book a PKR 500 PCOS consultation with Dr. Syed Hammad Wajid Talha (MBBS, FCPS), Gastroenterologist, Hepatologist at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
       },
-      { property: "og:title", content: "PCOS Consultation PKR 500 | Dr. Zaib Un Nisa, Gynaecologist" },
+      { property: "og:title", content: "PCOS Consultation PKR 500 | Dr. Syed Hammad Wajid Talha, Gastroenterologist" },
       {
         property: "og:description",
         content:
-          "Book a PKR 500 PCOS consultation with Dr. Zaib Un Nisa (MBBS, FCPS), Consultant Gynaecologist at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
+          "Book a PKR 500 PCOS consultation with Dr. Syed Hammad Wajid Talha (MBBS, FCPS), Gastroenterologist, Hepatologist at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -53,10 +53,10 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Physician",
-          name: "Dr. Zaib Un Nisa",
+          name: "Dr. Syed Hammad Wajid Talha",
           medicalSpecialty: "Obstetrics and Gynecology",
           description:
-            "Consultant Gynaecologist & Obstetrician offering PCOS consultation and personalised care planning.",
+            "Gastroenterologist & Hepatologist offering PCOS consultation and personalised care planning.",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Al-Qamar Hospital, Railway Road",
@@ -177,15 +177,15 @@ function LandingPage() {
               </h1>
               <p className="mx-auto max-w-xl text-pretty text-[0.95rem] leading-relaxed text-foreground/80">
                 A personalized PCOS consultation with{" "}
-                <strong className="font-semibold text-primary">Dr. Zaib Un Nisa (MBBS, FCPS)</strong>,
-                Consultant Gynaecologist &amp; Obstetrician — understand your symptoms and get a
+                <strong className="font-semibold text-primary">Dr. Syed Hammad Wajid Talha (MBBS, FCPS)</strong>,
+                Gastroenterologist &amp; Hepatologist — understand your symptoms and get a
                 personalized treatment approach.
               </p>
               <BookButton />
               <div className="relative w-full">
                 <img
                   src={heroConsultation.url}
-                  alt="Dr. Zaib Un Nisa consulting a patient about PCOS at Al-Qamar Hospital"
+                  alt="Dr. Syed Hammad Wajid Talha consulting a patient about PCOS at Al-Qamar Hospital"
                   width={1664}
                   height={936}
                   className="w-full rounded-3xl shadow-soft"
@@ -275,7 +275,7 @@ function LandingPage() {
                 <div className="rounded-xl bg-secondary p-4 text-center">
                   <Clock className="mx-auto mb-1 size-4 text-primary" aria-hidden="true" />
                   <p className="text-xs text-muted-foreground">Duration</p>
-                  <p className="text-sm font-semibold text-primary">10 Minutes</p>
+                  <p className="text-sm font-semibold text-primary">15 Minutes</p>
                 </div>
                 <div className="rounded-xl bg-secondary p-4 text-center">
                   <CalendarClock className="mx-auto mb-1 size-4 text-primary" aria-hidden="true" />
@@ -304,7 +304,7 @@ function LandingPage() {
             <div className="overflow-hidden rounded-3xl border border-border bg-background p-2 shadow-soft sm:p-3">
               <img
                 src={threeStepProcess.url}
-                alt="Simple 3-step process: book your consultation, consult with Dr. Zaib Un Nisa, receive your PCOS care plan"
+                alt="Simple 3-step process: book your consultation, consult with Dr. Syed Hammad Wajid Talha, receive your PCOS care plan"
                 width={1536}
                 height={1024}
                 loading="lazy"
@@ -320,7 +320,7 @@ function LandingPage() {
           <Card className="border-border shadow-card">
             <CardContent className="space-y-5 p-6 sm:p-8">
               <p className="text-center text-sm leading-relaxed text-foreground/85 sm:text-left">
-                Dr. Zaib Un Nisa is a Consultant Gynaecologist &amp; Obstetrician providing
+                Dr. Syed Hammad Wajid Talha is a Gastroenterologist &amp; Hepatologist providing
                 individualized care for women dealing with hormonal and reproductive health concerns.
               </p>
               <p className="text-center text-sm font-medium text-primary sm:text-left">Her approach focuses on:</p>
@@ -414,11 +414,11 @@ function LandingPage() {
         {/* WHY CHOOSE */}
         <section className="bg-secondary/50 py-12 sm:py-16">
           <div className="mx-auto max-w-3xl px-5">
-            <SectionTitle eyebrow="Why Dr. Zaib Un Nisa" title="Evidence-Based Personalized Care" />
+            <SectionTitle eyebrow="Why Dr. Syed Hammad Wajid Talha" title="Evidence-Based Personalized Care" />
             <Card className="border-border bg-background shadow-card">
               <CardContent className="space-y-4 p-6 sm:p-8">
                 <p className="text-center text-sm leading-relaxed text-foreground/85 sm:text-left">
-                  Every woman experiences PCOS differently. Dr. Zaib Un Nisa focuses on creating
+                  Every woman experiences PCOS differently. Dr. Syed Hammad Wajid Talha focuses on creating
                   personalized care plans based on:
                 </p>
                 <ul className="grid gap-2.5 sm:grid-cols-2">
@@ -482,7 +482,7 @@ function LandingPage() {
             <div className="overflow-hidden rounded-3xl border border-border bg-background p-2 shadow-soft sm:p-3">
               <img
                 src={patientTestimonials.url}
-                alt="Patient testimonials about PCOS consultations with Dr. Zaib Un Nisa"
+                alt="Patient testimonials about PCOS consultations with Dr. Syed Hammad Wajid Talha"
                 width={1536}
                 height={1024}
                 loading="lazy"
@@ -499,7 +499,7 @@ function LandingPage() {
               Start Your PCOS Care Journey Today
             </h2>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Reserve your 10-minute consultation with Dr. Zaib Un Nisa for PKR 500 and get clarity on
+              Reserve your 15-minute consultation with Dr. Syed Hammad Wajid Talha for PKR 500 and get clarity on
               your next steps.
             </p>
             <div className="flex justify-center">

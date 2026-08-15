@@ -12,10 +12,10 @@ export function TopBar() {
         <Link to="/" className="flex min-w-0 flex-col leading-tight">
 
           <span className="font-display text-lg font-semibold text-primary">
-            Dr. Zaib Un Nisa
+            Dr. Syed Hammad Wajid Talha
           </span>
           <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            MBBS, FCPS &middot; Gynaecologist
+            MBBS, FCPS &middot; Gastroenterologist
           </span>
         </Link>
         <a
@@ -38,8 +38,8 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-secondary/60">
       <div className="mx-auto max-w-5xl space-y-4 px-5 py-10 text-center text-sm text-muted-foreground sm:text-left">
         <div>
-          <p className="font-display text-xl text-primary">Dr. Zaib Un Nisa</p>
-          <p>MBBS, FCPS &mdash; Consultant Gynaecologist &amp; Obstetrician</p>
+          <p className="font-display text-xl text-primary">Dr. Syed Hammad Wajid Talha</p>
+          <p>MBBS, FCPS &mdash; Gastroenterologist &amp; Hepatologist</p>
         </div>
         <p className="flex items-start justify-center gap-2 sm:justify-start">
           <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
@@ -54,7 +54,7 @@ export function SiteFooter() {
           substitute for in-person medical advice, diagnosis or treatment. Individual results may vary
           and depend on each patient&apos;s condition and response to treatment.
         </p>
-        <p className="text-xs">&copy; {new Date().getFullYear()} Dr. Zaib Un Nisa. All rights reserved.</p>
+        <p className="text-xs">&copy; {new Date().getFullYear()} Dr. Syed Hammad Wajid Talha. All rights reserved.</p>
       </div>
     </footer>
   );
