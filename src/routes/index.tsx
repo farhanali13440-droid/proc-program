@@ -200,9 +200,7 @@ function LandingPage() {
               </div>
               <ul className="mx-auto grid w-full max-w-md gap-2.5 sm:grid-cols-2">
                 {badges.map((b) => (
-                  <TickItem key={b} className="justify-start text-left">
-                    {b}
-                  </TickItem>
+                  <TickItem key={b}>{b}</TickItem>
                 ))}
               </ul>
 
