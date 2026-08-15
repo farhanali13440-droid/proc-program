@@ -137,29 +137,36 @@ function CheckoutPage() {
               <CardContent className="space-y-5 p-6 sm:p-7">
                 <h2 className="text-center text-base font-semibold text-primary">Payment Method</h2>
                 <div className="grid gap-3 sm:grid-cols-3">
-                  {[
-                    { icon: Building2, label: "Bank Transfer" },
-                    { icon: Smartphone, label: "Easypaisa" },
-                    { icon: Smartphone, label: "JazzCash" },
-                  ].map(({ icon: Icon, label }) => (
-                    <div
-                      key={label}
-                      className="flex items-center justify-center gap-2 rounded-xl border border-border bg-secondary/60 px-3 py-3 text-sm font-medium text-primary"
-                    >
-                      <Icon className="size-4 shrink-0" aria-hidden="true" />
-                      {label}
-                    </div>
-                  ))}
+                  {paymentMethods.map(({ id, icon: Icon, label }) => {
+                    const active = method === id;
+                    return (
+                      <button
+                        key={id}
+                        type="button"
+                        onClick={() => setMethod(id)}
+                        aria-pressed={active}
+                        className={`flex items-center justify-center gap-2 rounded-xl border px-3 py-3 text-sm font-medium transition-colors ${
+                          active
+                            ? "border-primary bg-accent text-primary ring-2 ring-ring/40"
+                            : "border-border bg-secondary/60 text-primary hover:bg-secondary"
+                        }`}
+                      >
+                        <Icon className="size-4 shrink-0" aria-hidden="true" />
+                        {label}
+                      </button>
+                    );
+                  })}
                 </div>
 
                 <div className="space-y-1 rounded-xl bg-accent/50 p-5 text-center text-sm">
-                  <p className="font-semibold text-primary">Bank Details</p>
-                  <p className="text-foreground/85">Meezan Bank</p>
-                  <p className="break-all text-foreground/85">
-                    Account Number: PK04MEZN0098400115140340
-                  </p>
-                  <p className="text-foreground/85">Account Name: Muhammad Sohail Iqbal Qamar</p>
+                  <p className="font-semibold text-primary">{activeDetails.title}</p>
+                  {activeDetails.lines.map((line) => (
+                    <p key={line} className="break-all text-foreground/85">
+                      {line}
+                    </p>
+                  ))}
                 </div>
+
 
                 <div className="space-y-1.5">
                   <Label htmlFor="screenshot">Payment Screenshot Upload</Label>
