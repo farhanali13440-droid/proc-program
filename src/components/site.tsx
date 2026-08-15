@@ -43,11 +43,11 @@ export function SiteFooter() {
           <p className="font-display text-xl text-primary">Dr. Zaib-un-Nisa</p>
           <p>MBBS, FCPS &mdash; Consultant Gynaecologist &amp; Obstetrician</p>
         </div>
-        <p className="flex items-start justify-start gap-2">
+        <p className="grid grid-cols-[auto_1fr] items-start gap-2 text-left">
           <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
           Al-Qamar Hospital, Railway Road, Shakargarh (Near Bank of Punjab)
         </p>
-        <p className="flex items-center justify-start gap-2">
+        <p className="grid grid-cols-[auto_1fr] items-center gap-2 text-left">
           <Phone className="size-4 shrink-0" aria-hidden="true" />
           <span>
             WhatsApp:{" "}
