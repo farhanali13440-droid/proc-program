@@ -193,6 +193,14 @@ function LandingPage() {
                 <div className="relative mx-4 -mt-8 rounded-2xl border border-border bg-background/95 p-4 text-center shadow-card backdrop-blur">
                   <p className="font-display text-lg font-semibold text-primary">Al-Qamar Hospital</p>
                   <p className="text-xs text-muted-foreground">Railway Road, Shakargarh</p>
+                  <div className="my-2 h-px w-full bg-border" />
+                  <p className="font-display text-sm font-semibold text-primary">Dr. Syed Hammad Wajid Talha</p>
+                  <p className="text-xs text-muted-foreground">Gastroenterologist, Hepatologist</p>
+                  <p className="mt-1 text-[11px] leading-snug text-muted-foreground/80">
+                    M.B.B.S. - Rawalpindi Medical College, Pakistan, 2011
+                    <br />
+                    F.C.P.S. - College of Physicians &amp; Surgeons Pakistan (CPSP), Pakistan, 2020
+                  </p>
                 </div>
               </div>
               <ul className="mx-auto grid w-full max-w-md gap-2.5 sm:grid-cols-2">
