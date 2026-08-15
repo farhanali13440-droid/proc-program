@@ -111,7 +111,7 @@ export function SectionTitle({
       ) : null}
       <h2 className="text-balance text-2xl font-semibold text-primary sm:text-3xl">{title}</h2>
       {subtitle ? (
-        <p className="mx-auto max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground">
+        <p className="mx-auto max-w-2xl text-pretty text-left text-sm leading-relaxed text-muted-foreground">
           {subtitle}
         </p>
       ) : null}

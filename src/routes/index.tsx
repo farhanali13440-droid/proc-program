@@ -175,7 +175,7 @@ function LandingPage() {
                 PCOS Ko Samjhein, Manage Karein Aur Apni Health Ke Liye Sahi Treatment Plan Shuru
                 Karein
               </h1>
-              <p className="mx-auto max-w-xl text-pretty text-[0.95rem] leading-relaxed text-foreground/80">
+              <p className="mx-auto max-w-xl text-pretty text-left text-[0.95rem] leading-relaxed text-foreground/80">
                 A personalized PCOS consultation with{" "}
                 <strong className="font-semibold text-primary">Dr. Zaib-un-Nisa (MBBS, FCPS)</strong>,
                 Consultant Gynaecologist &amp; Obstetrician — understand your symptoms and get a
@@ -269,7 +269,7 @@ function LandingPage() {
             </div>
             <CardContent className="space-y-6 p-6 sm:p-8">
               <div>
-                <p className="mb-3 text-center text-sm font-semibold text-primary sm:text-left">Your consultation includes:</p>
+                <p className="mb-3 text-left text-sm font-semibold text-primary">Your consultation includes:</p>
                 <ul className="grid gap-2.5 sm:grid-cols-2">
                   {offerIncludes.map((i) => (
                     <TickItem key={i}>{i}</TickItem>
@@ -324,7 +324,7 @@ function LandingPage() {
           <SectionTitle eyebrow="Your Doctor" title="Meet Your Specialist" />
           <Card className="border-border shadow-card">
             <CardContent className="space-y-5 p-6 sm:p-8">
-              <div className="text-center sm:text-left">
+              <div className="text-left">
                 <p className="font-display text-xl font-semibold text-primary">
                   Dr. Zaib-un-Nisa
                 </p>
@@ -341,7 +341,7 @@ function LandingPage() {
                 ))}
               </ul>
 
-              <p className="text-center text-sm font-medium text-primary sm:text-left">Services &amp; areas of care:</p>
+              <p className="text-left text-sm font-medium text-primary">Services &amp; areas of care:</p>
               <ul className="grid gap-2.5 sm:grid-cols-2">
                 {[
                   "Antenatal Care & Pregnancy Monitoring",
@@ -368,7 +368,7 @@ function LandingPage() {
             <SectionTitle eyebrow="Suitability" title="Who Is This For?" />
             <Card className="border-border bg-background shadow-card">
               <CardContent className="space-y-5 p-6 sm:p-8">
-                <p className="text-center text-sm text-muted-foreground sm:text-left">
+                <p className="text-left text-sm text-muted-foreground">
                   This consultation is suitable for women:
                 </p>
                 <ul className="grid gap-2.5 sm:grid-cols-2">
@@ -393,7 +393,7 @@ function LandingPage() {
                 Continued Care
               </p>
               <h2 className="text-2xl font-semibold sm:text-3xl">Need More Support Managing PCOS?</h2>
-              <p className="text-sm text-primary-foreground/80">
+              <p className="text-left text-sm text-primary-foreground/80">
                 After consultation, suitable patients may be offered the 3-Month PCOS Care Program.
               </p>
             </div>
@@ -404,7 +404,7 @@ function LandingPage() {
                     3-Month PCOS Care Program
                   </h3>
                   <p className="mt-1 font-display text-3xl font-semibold text-primary">PKR 14,500</p>
-                  <p className="mt-2 rounded-xl bg-accent/60 p-3 text-xs font-medium text-accent-foreground">
+                  <p className="mt-2 rounded-xl bg-accent/60 p-3 text-left text-xs font-medium text-accent-foreground">
                     Your PKR 700 consultation fee will be adjusted if you enroll within 7 days.
                   </p>
                 </div>
@@ -438,7 +438,7 @@ function LandingPage() {
             <SectionTitle eyebrow="Why Dr. Zaib-un-Nisa" title="Evidence-Based Personalized Care" />
             <Card className="border-border bg-background shadow-card">
               <CardContent className="space-y-4 p-6 sm:p-8">
-                <p className="text-center text-sm leading-relaxed text-foreground/85 sm:text-left">
+                <p className="text-left text-sm leading-relaxed text-foreground/85">
                   Every woman experiences PCOS differently. Dr. Zaib-un-Nisa focuses on creating
                   personalized care plans based on:
                 </p>
@@ -484,7 +484,7 @@ function LandingPage() {
                 <AccordionTrigger className="text-left text-sm font-semibold text-primary">
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
+                <AccordionContent className="text-left text-sm leading-relaxed text-muted-foreground">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>
@@ -519,7 +519,7 @@ function LandingPage() {
             <h2 className="text-balance text-2xl font-semibold text-primary sm:text-3xl">
               Start Your PCOS Care Journey Today
             </h2>
-            <p className="text-sm leading-relaxed text-muted-foreground">
+            <p className="text-left text-sm leading-relaxed text-muted-foreground">
               Reserve your 15-minute consultation with Dr. Zaib-un-Nisa for PKR 700 and get clarity on
               your next steps.
             </p>
