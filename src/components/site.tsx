@@ -4,8 +4,8 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 
-export const WHATSAPP_NUMBER = "+92 333 6583649";
-export const WHATSAPP_LINK = "https://wa.me/923336583649";
+export const WHATSAPP_NUMBER = "+92 300 7181071";
+export const WHATSAPP_LINK = "https://wa.me/923007181071";
 
 export function TopBar() {
   return (
@@ -14,10 +14,10 @@ export function TopBar() {
         <Link to="/" className="flex min-w-0 flex-col leading-tight">
 
           <span className="font-display text-lg font-semibold text-primary">
-            Dr. Syed Hammad Wajid Talha
+            Dr. Zaib-un-Nisa
           </span>
           <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            MBBS, FCPS &middot; Gastroenterologist
+            MBBS, FCPS &middot; Consultant Gynaecologist
           </span>
         </Link>
         <a
@@ -40,12 +40,12 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-secondary/60">
       <div className="mx-auto max-w-5xl space-y-4 px-5 py-10 text-center text-sm text-muted-foreground sm:text-left">
         <div>
-          <p className="font-display text-xl text-primary">Dr. Syed Hammad Wajid Talha</p>
-          <p>MBBS, FCPS &mdash; Gastroenterologist &amp; Hepatologist</p>
+          <p className="font-display text-xl text-primary">Dr. Zaib-un-Nisa</p>
+          <p>MBBS, FCPS &mdash; Consultant Gynaecologist &amp; Obstetrician</p>
         </div>
         <p className="flex items-start justify-center gap-2 sm:justify-start">
           <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-          Al-Qamar Hospital, Railway Road, Shakargarh
+          Al-Qamar Hospital, Railway Road, Shakargarh (Near Bank of Punjab)
         </p>
         <p className="flex items-center justify-center gap-2 sm:justify-start">
           <Phone className="size-4 shrink-0" aria-hidden="true" />
@@ -61,7 +61,7 @@ export function SiteFooter() {
           substitute for in-person medical advice, diagnosis or treatment. Individual results may vary
           and depend on each patient&apos;s condition and response to treatment.
         </p>
-        <p className="text-xs">&copy; {new Date().getFullYear()} Dr. Syed Hammad Wajid Talha. All rights reserved.</p>
+        <p className="text-xs">&copy; {new Date().getFullYear()} Dr. Zaib-un-Nisa. All rights reserved.</p>
       </div>
     </footer>
   );

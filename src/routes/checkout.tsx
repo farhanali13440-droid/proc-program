@@ -19,16 +19,16 @@ export const Route = createFileRoute("/checkout")({
   component: CheckoutPage,
   head: () => ({
     meta: [
-      { title: "Checkout — PCOS Consultation PKR 700 | Dr. Syed Hammad Wajid Talha" },
+      { title: "Checkout — PCOS Consultation PKR 700 | Dr. Zaib-un-Nisa" },
       {
         name: "description",
         content:
-          "Complete your PKR 700 PCOS consultation booking with Dr. Syed Hammad Wajid Talha. Pay via bank transfer, Easypaisa or JazzCash and upload your payment screenshot.",
+          "Complete your PKR 700 PCOS consultation booking with Dr. Zaib-un-Nisa. Pay via bank transfer, Easypaisa or JazzCash and upload your payment screenshot.",
       },
       { property: "og:title", content: "Complete Your PCOS Consultation Booking" },
       {
         property: "og:description",
-        content: "Secure your PKR 700 consultation with Dr. Syed Hammad Wajid Talha, Gastroenterologist, Hepatologist.",
+        content: "Secure your PKR 700 consultation with Dr. Zaib-un-Nisa, Consultant Gynaecologist & Obstetrician.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -114,13 +114,13 @@ function CheckoutPage() {
           <Card className="mb-6 border-border shadow-card">
             <CardContent className="space-y-1 p-6 text-center">
               <p className="text-sm font-semibold text-primary">
-                PCOS Consultation With Dr. Syed Hammad Wajid Talha
+                PCOS Consultation With Dr. Zaib-un-Nisa
               </p>
               <p className="text-xs text-muted-foreground">
-                MBBS, FCPS &middot; Gastroenterologist, Hepatologist
+                MBBS, FCPS &middot; Consultant Gynaecologist &amp; Obstetrician
               </p>
               <p className="font-display text-3xl font-semibold text-primary">PKR 700</p>
-              <p className="text-xs text-muted-foreground">15 minutes &middot; Mon–Sat, 9:00 AM – 1:00 PM</p>
+              <p className="text-xs text-muted-foreground">15 minutes &middot; Daily, 9:00 AM – 1:00 PM</p>
             </CardContent>
           </Card>
 
