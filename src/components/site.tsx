@@ -68,9 +68,20 @@ export function SiteFooter() {
 }
 
 
-export function TickItem({ children }: { children: ReactNode }) {
+export function TickItem({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
-    <li className="flex items-center justify-center gap-2.5 text-center text-sm leading-relaxed text-foreground/90 sm:justify-start sm:text-left">
+    <li
+      className={cn(
+        "flex items-center justify-center gap-2.5 text-center text-sm leading-relaxed text-foreground/90 sm:justify-start sm:text-left",
+        className,
+      )}
+    >
       <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-accent">
         <Check className="size-3 text-accent-foreground" aria-hidden="true" />
       </span>
@@ -78,6 +89,7 @@ export function TickItem({ children }: { children: ReactNode }) {
     </li>
   );
 }
+
 
 
 
