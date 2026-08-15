@@ -28,7 +28,7 @@ export const Route = createFileRoute("/checkout")({
       { property: "og:title", content: "Complete Your PCOS Consultation Booking" },
       {
         property: "og:description",
-        content: "Secure your PKR 700 consultation with Dr. Zaib-un-Nisa, Consultant Gynaecologist &amp; Obstetrician.",
+        content: "Secure your PKR 700 consultation with Dr. Zaib-un-Nisa, Consultant Gynaecologist & Obstetrician.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -120,7 +120,7 @@ function CheckoutPage() {
                 MBBS, FCPS &middot; Consultant Gynaecologist &amp; Obstetrician
               </p>
               <p className="font-display text-3xl font-semibold text-primary">PKR 700</p>
-              <p className="text-xs text-muted-foreground">15 minutes &middot; Mon–Sat, 9:00 AM – 1:00 PM</p>
+              <p className="text-xs text-muted-foreground">15 minutes &middot; Daily, 9:00 AM – 1:00 PM</p>
             </CardContent>
           </Card>
 

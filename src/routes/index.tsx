@@ -36,13 +36,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Book a PKR 700 PCOS consultation with Dr. Zaib-un-Nisa (MBBS, FCPS), Consultant Gynaecologist &amp; Obstetrician at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
+          "Book a PKR 700 PCOS consultation with Dr. Zaib-un-Nisa (MBBS, FCPS), Consultant Gynaecologist & Obstetrician at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
       },
       { property: "og:title", content: "PCOS Consultation PKR 700 | Dr. Zaib-un-Nisa, Consultant Gynaecologist" },
       {
         property: "og:description",
         content:
-          "Book a PKR 700 PCOS consultation with Dr. Zaib-un-Nisa (MBBS, FCPS), Consultant Gynaecologist &amp; Obstetrician at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
+          "Book a PKR 700 PCOS consultation with Dr. Zaib-un-Nisa (MBBS, FCPS), Consultant Gynaecologist & Obstetrician at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Physician",
           name: "Dr. Zaib-un-Nisa",
-          medicalSpecialty: "Gastroenterology",
+          medicalSpecialty: "Obstetrics and Gynecology",
           description:
             "Consultant Gynaecologist & Obstetrician offering PCOS consultation and personalised care planning.",
           address: {
@@ -284,7 +284,7 @@ function LandingPage() {
                 <div className="rounded-xl bg-secondary p-4 text-center">
                   <CalendarClock className="mx-auto mb-1 size-4 text-primary" aria-hidden="true" />
                   <p className="text-xs text-muted-foreground">Available</p>
-                  <p className="text-sm font-semibold text-primary">Monday – Saturday</p>
+                  <p className="text-sm font-semibold text-primary">Daily</p>
                 </div>
                 <div className="rounded-xl bg-secondary p-4 text-center">
                   <Video className="mx-auto mb-1 size-4 text-primary" aria-hidden="true" />

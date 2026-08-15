@@ -81,19 +81,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Book a PKR 700 PCOS consultation with Dr. Zaib-un-Nisa (MBBS, FCPS), Consultant Gynaecologist &amp; Obstetrician at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
+          "Book a PKR 700 PCOS consultation with Dr. Zaib-un-Nisa (MBBS, FCPS), Consultant Gynaecologist & Obstetrician at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
       },
       { name: "author", content: "Dr. Zaib-un-Nisa" },
       { property: "og:title", content: "PCOS Consultation PKR 700 | Dr. Zaib-un-Nisa, Consultant Gynaecologist" },
       {
         property: "og:description",
-        content: "Book a PKR 700 PCOS consultation with Dr. Zaib-un-Nisa (MBBS, FCPS), Consultant Gynaecologist &amp; Obstetrician at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
+        content: "Book a PKR 700 PCOS consultation with Dr. Zaib-un-Nisa (MBBS, FCPS), Consultant Gynaecologist & Obstetrician at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "PCOS Consultation PKR 700 | Dr. Zaib-un-Nisa, Consultant Gynaecologist" },
-      { name: "twitter:description", content: "Book a PKR 700 PCOS consultation with Dr. Zaib-un-Nisa (MBBS, FCPS), Consultant Gynaecologist &amp; Obstetrician at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan." },
+      { name: "twitter:description", content: "Book a PKR 700 PCOS consultation with Dr. Zaib-un-Nisa (MBBS, FCPS), Consultant Gynaecologist & Obstetrician at Al-Qamar Hospital, Shakargarh. Personalised assessment and care plan." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9bd685cc-b0d4-474f-8c28-633563da4690/id-preview-f0a9bcdc--6caba94c-25a0-4fbf-9776-feecc8a93920.lovable.app-1785306454018.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9bd685cc-b0d4-474f-8c28-633563da4690/id-preview-f0a9bcdc--6caba94c-25a0-4fbf-9776-feecc8a93920.lovable.app-1785306454018.png" },
     ],
