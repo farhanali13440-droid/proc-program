@@ -190,14 +190,6 @@ function LandingPage() {
                   height={936}
                   className="w-full rounded-3xl shadow-soft"
                 />
-                <div className="relative mx-4 -mt-8 rounded-2xl border border-border bg-background/95 p-4 text-center shadow-card backdrop-blur">
-                  <p className="font-display text-lg font-semibold text-primary">Dr. Zaib-un-Nisa</p>
-                  <p className="text-xs text-muted-foreground">Consultant Gynaecologist &amp; Obstetrician</p>
-                  <div className="my-2 h-px w-full bg-border" />
-                  <p className="font-display text-sm font-semibold text-primary">Al-Qamar Hospital</p>
-                  <p className="text-xs text-muted-foreground">Railway Road, Shakargarh &middot; Near Bank of Punjab</p>
-                  <p className="text-xs text-muted-foreground">Daily, 9:00 AM – 1:00 PM</p>
-                </div>
               </div>
               <ul className="mx-auto grid w-full max-w-md gap-2.5 sm:grid-cols-2">
                 {badges.map((b) => (
