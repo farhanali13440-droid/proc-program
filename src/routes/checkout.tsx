@@ -85,6 +85,9 @@ function CheckoutPage() {
   const [concern, setConcern] = useState("");
   const [fileName, setFileName] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [method, setMethod] = useState<PaymentMethodId>("bank");
+  const activeDetails = paymentDetails[method];
+
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
