@@ -331,22 +331,26 @@ function LandingPage() {
               </div>
               <ul className="grid gap-2.5 sm:grid-cols-2">
                 {[
-                  "M.B.B.S. — Rawalpindi Medical College, Pakistan, 2011",
-                  "F.C.P.S. — College of Physicians & Surgeons Pakistan (CPSP), Pakistan, 2020",
-                  "Experience: 6 Yrs",
+                  "M.B.B.S., F.C.P.S.",
+                  "Former Consultant, Evercare Hospital, Lahore",
+                  "Former Registrar, Fatima Memorial Hospital (FMH), Shadman, Lahore",
+                  "Al-Qamar Hospital, Railway Road, Shakargarh (Near Bank of Punjab)",
                 ].map((i) => (
                   <TickItem key={i}>{i}</TickItem>
                 ))}
               </ul>
 
-              <p className="text-center text-sm font-medium text-primary sm:text-left">His approach focuses on:</p>
+              <p className="text-center text-sm font-medium text-primary sm:text-left">Services &amp; areas of care:</p>
               <ul className="grid gap-2.5 sm:grid-cols-2">
                 {[
-                  "Understanding your symptoms",
-                  "Proper diagnosis",
-                  "Personalized treatment planning",
-                  "Lifestyle modification",
-                  "Long-term health improvement",
+                  "Antenatal Care & Pregnancy Monitoring",
+                  "Normal Delivery",
+                  "Caesarean Section (C-Section)",
+                  "Infertility Management",
+                  "Hormonal Imbalance & Women's Health Issues",
+                  "High-Risk Pregnancy Care",
+                  "Ultrasound & Medical Consultation",
+                  "Family Planning",
                 ].map((i) => (
                   <TickItem key={i}>{i}</TickItem>
                 ))}
