@@ -64,8 +64,8 @@ function ThankYouPage() {
               <div className="rounded-xl bg-secondary p-4 text-left text-sm text-foreground/85">
                 <p className="mb-1 font-semibold text-primary">What happens next</p>
                 <p className="leading-relaxed">
-                  Keep your previous reports and investigations ready. Consultations run Monday to
-                  Consultations run daily, 9:00 AM – 1:00 PM at Al-Qamar Hospital, Railway Road, Shakargarh (Near Bank of Punjab), or online.
+                  Keep your previous reports and investigations ready. Consultations run daily,
+                  9:00 AM – 1:00 PM at Al-Qamar Hospital, Railway Road, Shakargarh (Near Bank of Punjab), or online.
                 </p>
               </div>
               <Link to="/" className="inline-block text-xs font-medium text-primary underline">
