@@ -63,14 +63,15 @@ export function SiteFooter() {
 
 export function TickItem({ children }: { children: ReactNode }) {
   return (
-    <li className="flex items-start justify-center gap-2.5 text-center text-sm leading-relaxed text-foreground/90 sm:justify-start sm:text-left">
-      <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent">
+    <li className="flex items-center justify-center gap-2.5 text-center text-sm leading-relaxed text-foreground/90 sm:justify-start sm:text-left">
+      <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-accent">
         <Check className="size-3 text-accent-foreground" aria-hidden="true" />
       </span>
       <span className="min-w-0">{children}</span>
     </li>
   );
 }
+
 
 
 export function SectionTitle({
