@@ -19,16 +19,16 @@ export const Route = createFileRoute("/checkout")({
   component: CheckoutPage,
   head: () => ({
     meta: [
-      { title: "Checkout — PCOS Consultation PKR 500 | Dr. Zaib Un Nisa" },
+      { title: "Checkout — PCOS Consultation PKR 500 | Dr. Syed Hammad Wajid Talha" },
       {
         name: "description",
         content:
-          "Complete your PKR 500 PCOS consultation booking with Dr. Zaib Un Nisa. Pay via bank transfer, Easypaisa or JazzCash and upload your payment screenshot.",
+          "Complete your PKR 500 PCOS consultation booking with Dr. Syed Hammad Wajid Talha. Pay via bank transfer, Easypaisa or JazzCash and upload your payment screenshot.",
       },
       { property: "og:title", content: "Complete Your PCOS Consultation Booking" },
       {
         property: "og:description",
-        content: "Secure your PKR 500 consultation with Dr. Zaib Un Nisa, Consultant Gynaecologist.",
+        content: "Secure your PKR 500 consultation with Dr. Syed Hammad Wajid Talha, Gastroenterologist, Hepatologist.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -44,11 +44,50 @@ const concerns = [
   "Other",
 ];
 
+const paymentMethods = [
+  { id: "bank", icon: Building2, label: "Bank Transfer" },
+  { id: "easypaisa", icon: Smartphone, label: "Easypaisa" },
+  { id: "jazzcash", icon: Smartphone, label: "JazzCash" },
+] as const;
+
+type PaymentMethodId = (typeof paymentMethods)[number]["id"];
+
+const paymentDetails: Record<PaymentMethodId, { title: string; lines: string[] }> = {
+  bank: {
+    title: "Bank Details",
+    lines: [
+      "Meezan Bank",
+      "Account Number: PK04MEZN0098400115140340",
+      "Account Name: Muhammad Sohail Iqbal Qamar",
+    ],
+  },
+  easypaisa: {
+    title: "Easypaisa Details",
+    lines: [
+      "Easypaisa Account",
+      "Account Number: 0327 5991415",
+      "Account Name: Muhammad Sohail Iqbal Qamar",
+    ],
+  },
+  jazzcash: {
+    title: "JazzCash Details",
+    lines: [
+      "JazzCash Account",
+      "Account Number: 0327 5991415",
+      "Account Name: Muhammad Sohail Iqbal Qamar",
+    ],
+  },
+};
+
+
 function CheckoutPage() {
   const navigate = useNavigate();
   const [concern, setConcern] = useState("");
   const [fileName, setFileName] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [method, setMethod] = useState<PaymentMethodId>("bank");
+  const activeDetails = paymentDetails[method];
+
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -75,13 +114,13 @@ function CheckoutPage() {
           <Card className="mb-6 border-border shadow-card">
             <CardContent className="space-y-1 p-6 text-center">
               <p className="text-sm font-semibold text-primary">
-                PCOS Consultation With Dr. Zaib Un Nisa
+                PCOS Consultation With Dr. Syed Hammad Wajid Talha
               </p>
               <p className="text-xs text-muted-foreground">
-                MBBS, FCPS &middot; Consultant Gynaecologist
+                MBBS, FCPS &middot; Gastroenterologist, Hepatologist
               </p>
               <p className="font-display text-3xl font-semibold text-primary">PKR 500</p>
-              <p className="text-xs text-muted-foreground">10 minutes &middot; Mon–Sat, 9:00 AM – 1:00 PM</p>
+              <p className="text-xs text-muted-foreground">15 minutes &middot; Mon–Sat, 9:00 AM – 1:00 PM</p>
             </CardContent>
           </Card>
 
@@ -137,29 +176,36 @@ function CheckoutPage() {
               <CardContent className="space-y-5 p-6 sm:p-7">
                 <h2 className="text-center text-base font-semibold text-primary">Payment Method</h2>
                 <div className="grid gap-3 sm:grid-cols-3">
-                  {[
-                    { icon: Building2, label: "Bank Transfer" },
-                    { icon: Smartphone, label: "Easypaisa" },
-                    { icon: Smartphone, label: "JazzCash" },
-                  ].map(({ icon: Icon, label }) => (
-                    <div
-                      key={label}
-                      className="flex items-center justify-center gap-2 rounded-xl border border-border bg-secondary/60 px-3 py-3 text-sm font-medium text-primary"
-                    >
-                      <Icon className="size-4 shrink-0" aria-hidden="true" />
-                      {label}
-                    </div>
-                  ))}
+                  {paymentMethods.map(({ id, icon: Icon, label }) => {
+                    const active = method === id;
+                    return (
+                      <button
+                        key={id}
+                        type="button"
+                        onClick={() => setMethod(id)}
+                        aria-pressed={active}
+                        className={`flex items-center justify-center gap-2 rounded-xl border px-3 py-3 text-sm font-medium transition-colors ${
+                          active
+                            ? "border-primary bg-accent text-primary ring-2 ring-ring/40"
+                            : "border-border bg-secondary/60 text-primary hover:bg-secondary"
+                        }`}
+                      >
+                        <Icon className="size-4 shrink-0" aria-hidden="true" />
+                        {label}
+                      </button>
+                    );
+                  })}
                 </div>
 
                 <div className="space-y-1 rounded-xl bg-accent/50 p-5 text-center text-sm">
-                  <p className="font-semibold text-primary">Bank Details</p>
-                  <p className="text-foreground/85">Meezan Bank</p>
-                  <p className="break-all text-foreground/85">
-                    Account Number: PK04MEZN0098400115140340
-                  </p>
-                  <p className="text-foreground/85">Account Name: Muhammad Sohail Iqbal Qamar</p>
+                  <p className="font-semibold text-primary">{activeDetails.title}</p>
+                  {activeDetails.lines.map((line) => (
+                    <p key={line} className="break-all text-foreground/85">
+                      {line}
+                    </p>
+                  ))}
                 </div>
+
 
                 <div className="space-y-1.5">
                   <Label htmlFor="screenshot">Payment Screenshot Upload</Label>
