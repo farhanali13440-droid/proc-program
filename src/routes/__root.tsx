@@ -15,7 +15,8 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { META_PIXEL_ID, trackPageView } from "../lib/tracking";
 
 // Meta Pixel base code — initialised exactly once, globally.
-const META_PIXEL_SNIPPET = `!function(f,b,e,v,n,t,s)
+const META_PIXEL_SNIPPET = `if(!window.__metaPixelLoaded){window.__metaPixelLoaded=1;
+!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
@@ -24,7 +25,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '${META_PIXEL_ID}');
-fbq('track', 'PageView');`;
+fbq('track', 'PageView');}`;
 
 function NotFoundComponent() {
   return (
