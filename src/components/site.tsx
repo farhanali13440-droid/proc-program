@@ -4,8 +4,8 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 
-export const WHATSAPP_NUMBER = "+92 300 7181071";
-export const WHATSAPP_LINK = "https://wa.me/923007181071";
+export const WHATSAPP_NUMBER = "+92 327 5991415";
+export const WHATSAPP_LINK = "https://wa.me/923275991415";
 
 export function TopBar() {
   return (
