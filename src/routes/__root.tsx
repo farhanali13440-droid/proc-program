@@ -138,6 +138,15 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
@@ -147,6 +156,19 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  // The base snippet already fires the first PageView; only track SPA navigations.
+  const lastPath = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (lastPath.current === null) {
+      lastPath.current = pathname;
+      return;
+    }
+    if (lastPath.current === pathname) return;
+    lastPath.current = pathname;
+    trackPageView();
+  }, [pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>
