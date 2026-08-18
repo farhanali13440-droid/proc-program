@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   SiteFooter,
@@ -8,7 +9,7 @@ import {
   WHATSAPP_NUMBER,
 } from "@/components/site";
 import { CheckCircle2, MessageCircle } from "lucide-react";
-import { trackContact } from "@/lib/tracking";
+import { trackContact, trackSchedule } from "@/lib/tracking";
 
 export const Route = createFileRoute("/thank-you")({
   component: ThankYouPage,
@@ -33,6 +34,15 @@ export const Route = createFileRoute("/thank-you")({
 });
 
 function ThankYouPage() {
+  const scheduled = useRef(false);
+
+  // Fire the Schedule conversion once when the successful booking confirmation is reached.
+  useEffect(() => {
+    if (scheduled.current) return;
+    scheduled.current = true;
+    trackSchedule();
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <TopBar />

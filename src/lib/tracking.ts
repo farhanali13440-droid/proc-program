@@ -32,3 +32,5 @@ export const trackLead = () => trackEvent("Lead");
 export const trackPurchase = () => trackEvent("Purchase", { value: 700, currency: "PKR" });
 
 export const trackContact = () => trackEvent("Contact");
+
+export const trackSchedule = () => trackEvent("Schedule");
