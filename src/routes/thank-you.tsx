@@ -8,6 +8,7 @@ import {
   WHATSAPP_NUMBER,
 } from "@/components/site";
 import { CheckCircle2, MessageCircle } from "lucide-react";
+import { trackContact } from "@/lib/tracking";
 
 export const Route = createFileRoute("/thank-you")({
   component: ThankYouPage,
@@ -54,6 +55,7 @@ function ThankYouPage() {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackContact()}
                   className="inline-flex h-auto w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-4 text-base font-semibold text-primary-foreground shadow-soft transition-colors hover:bg-primary/90"
                 >
                   <MessageCircle className="size-5" aria-hidden="true" />

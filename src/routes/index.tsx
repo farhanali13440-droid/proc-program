@@ -14,7 +14,6 @@ import {
   TopBar,
   WhatsAppFloat,
 } from "@/components/site";
-import { trackInitiateCheckout } from "@/lib/tracking";
 import heroConsultation from "@/assets/hero-consultation.png.asset.json";
 import pcosSymptoms from "@/assets/pcos-symptoms.png.asset.json";
 import pcosGuidance from "@/assets/pcos-guidance.png.asset.json";
@@ -149,7 +148,7 @@ function BookButton({ label = "Book PCOS Consultation — PKR 700" }: { label?: 
         size="lg"
         className="h-auto w-full max-w-md rounded-full px-6 py-4 text-center text-base font-semibold leading-snug shadow-soft"
       >
-        <Link to="/checkout" onClick={() => trackInitiateCheckout()}>
+        <Link to="/checkout">
           {label}
         </Link>
       </Button>

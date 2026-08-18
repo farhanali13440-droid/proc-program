@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { SiteFooter, TickItem, TopBar, WhatsAppFloat } from "@/components/site";
-import { trackPurchase } from "@/lib/tracking";
+import { trackInitiateCheckout, trackLead, trackPurchase } from "@/lib/tracking";
 import { Building2, ShieldCheck, Smartphone, Upload } from "lucide-react";
 
 export const Route = createFileRoute("/checkout")({
@@ -87,11 +87,21 @@ function CheckoutPage() {
   const [submitting, setSubmitting] = useState(false);
   const [method, setMethod] = useState<PaymentMethodId>("bank");
   const activeDetails = paymentDetails[method];
+  const initiated = useRef(false);
+
+  // Fires once when the visitor actually reaches the checkout/payment step.
+  useEffect(() => {
+    if (initiated.current) return;
+    initiated.current = true;
+    trackInitiateCheckout();
+  }, []);
 
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (submitting) return;
     setSubmitting(true);
+    trackLead();
     trackPurchase();
     navigate({ to: "/thank-you" });
   }

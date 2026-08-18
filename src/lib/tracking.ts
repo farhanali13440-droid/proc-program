@@ -1,6 +1,5 @@
-// Conversion tracking placeholders.
-// Add your Meta Pixel / Google Analytics snippets in src/routes/__root.tsx,
-// then these helpers will forward events automatically.
+// Meta Pixel conversion tracking helpers.
+// The pixel base code is installed once globally in src/routes/__root.tsx.
 
 type TrackPayload = Record<string, string | number | boolean | undefined>;
 
@@ -11,13 +10,25 @@ declare global {
   }
 }
 
-export function trackEvent(name: string, payload: TrackPayload = {}) {
+export const META_PIXEL_ID = "1583560866736462";
+
+export function trackEvent(name: string, payload?: TrackPayload) {
   if (typeof window === "undefined") return;
-  window.fbq?.("track", name, payload);
-  window.gtag?.("event", name, payload);
+  if (payload) {
+    window.fbq?.("track", name, payload);
+    window.gtag?.("event", name, payload);
+  } else {
+    window.fbq?.("track", name);
+    window.gtag?.("event", name);
+  }
 }
 
-export const trackInitiateCheckout = () =>
-  trackEvent("InitiateCheckout", { value: 500, currency: "PKR" });
+export const trackPageView = () => trackEvent("PageView");
 
-export const trackPurchase = () => trackEvent("Purchase", { value: 500, currency: "PKR" });
+export const trackInitiateCheckout = () => trackEvent("InitiateCheckout");
+
+export const trackLead = () => trackEvent("Lead");
+
+export const trackPurchase = () => trackEvent("Purchase", { value: 700, currency: "PKR" });
+
+export const trackContact = () => trackEvent("Contact");
