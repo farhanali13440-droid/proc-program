@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Check, MessageCircle, Phone, MapPin } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { trackContact } from "@/lib/tracking";
 
 
 export const WHATSAPP_NUMBER = "+92 327 5991415";
@@ -24,6 +25,7 @@ export function TopBar() {
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackContact()}
           className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-secondary"
         >
           <MessageCircle className="size-3.5" aria-hidden="true" />
@@ -51,7 +53,7 @@ export function SiteFooter() {
           <Phone className="size-4 shrink-0" aria-hidden="true" />
           <span>
             WhatsApp:{" "}
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" onClick={() => trackContact()} className="underline underline-offset-2">
               {WHATSAPP_NUMBER}
             </a>
           </span>
@@ -125,6 +127,7 @@ export function WhatsAppFloat() {
       href={WHATSAPP_LINK}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackContact()}
       aria-label="Chat on WhatsApp"
       className="fixed bottom-5 right-4 z-50 inline-flex size-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-soft transition-transform hover:scale-105"
     >
