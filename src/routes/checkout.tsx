@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { SiteFooter, TickItem, TopBar, WhatsAppFloat } from "@/components/site";
-import { trackInitiateCheckout, trackLead, trackPurchase } from "@/lib/tracking";
+import { createLeadEventId, trackInitiateCheckout, trackLead, trackPurchase } from "@/lib/tracking";
 import { Building2, ShieldCheck, Smartphone, Upload } from "lucide-react";
 
 export const Route = createFileRoute("/checkout")({
@@ -88,6 +88,7 @@ function CheckoutPage() {
   const [method, setMethod] = useState<PaymentMethodId>("bank");
   const activeDetails = paymentDetails[method];
   const initiated = useRef(false);
+  const leadFired = useRef(false);
 
   // Fires once when the visitor actually reaches the checkout/payment step.
   useEffect(() => {
@@ -99,9 +100,13 @@ function CheckoutPage() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (submitting) return;
+    // Native HTML validation must pass before this handler runs.
+    if (submitting || leadFired.current) return;
     setSubmitting(true);
-    trackLead();
+    // One successful submission => exactly one Lead event.
+    leadFired.current = true;
+    const eventId = createLeadEventId();
+    trackLead(eventId);
     trackPurchase();
     navigate({ to: "/thank-you" });
   }
