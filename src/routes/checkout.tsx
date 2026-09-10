@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { SiteFooter, TickItem, TopBar, WhatsAppFloat } from "@/components/site";
 import { createLeadEventId, trackInitiateCheckout, trackLead, trackPurchase } from "@/lib/tracking";
+import { saveLead } from "@/lib/lead-store";
 import { Building2, ShieldCheck, Smartphone, Upload } from "lucide-react";
 
 export const Route = createFileRoute("/checkout")({
@@ -79,36 +80,71 @@ const paymentDetails: Record<PaymentMethodId, { title: string; lines: string[] }
   },
 };
 
+async function fileToDataUrl(file: File): Promise<string> {
+  return await new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result));
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
 
 function CheckoutPage() {
   const navigate = useNavigate();
   const [concern, setConcern] = useState("");
   const [fileName, setFileName] = useState("");
+  const [proofDataUrl, setProofDataUrl] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [method, setMethod] = useState<PaymentMethodId>("bank");
   const activeDetails = paymentDetails[method];
   const initiated = useRef(false);
   const leadFired = useRef(false);
 
-  // Fires once when the visitor actually reaches the checkout/payment step.
   useEffect(() => {
     if (initiated.current) return;
     initiated.current = true;
     trackInitiateCheckout();
   }, []);
 
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // Native HTML validation must pass before this handler runs.
     if (submitting || leadFired.current) return;
     setSubmitting(true);
-    // One successful submission => exactly one Lead event.
-    leadFired.current = true;
-    const eventId = createLeadEventId();
-    trackLead(eventId);
-    trackPurchase();
-    navigate({ to: "/thank-you" });
+    try {
+      const form = new FormData(e.currentTarget);
+      let storedProof = proofDataUrl;
+      const file = form.get("screenshot");
+      if (file instanceof File && file.size > 0) {
+        if (file.size > 3 * 1024 * 1024) {
+          alert("Please upload a payment screenshot smaller than 3 MB.");
+          setSubmitting(false);
+          return;
+        }
+        storedProof = await fileToDataUrl(file);
+      }
+
+      saveLead({
+        fullName: String(form.get("fullName") ?? ""),
+        age: String(form.get("age") ?? ""),
+        whatsapp: String(form.get("whatsapp") ?? ""),
+        city: String(form.get("city") ?? ""),
+        concern,
+        paymentMethod: activeDetails.title.replace(" Details", ""),
+        paymentProofName: fileName || undefined,
+        paymentProofDataUrl: storedProof || undefined,
+      });
+
+      leadFired.current = true;
+      const eventId = createLeadEventId();
+      trackLead(eventId);
+      trackPurchase();
+      navigate({ to: "/thank-you" });
+    } catch (error) {
+      console.error(error);
+      leadFired.current = false;
+      setSubmitting(false);
+      alert("We could not save your booking. Please try again.");
+    }
   }
 
   return (
@@ -128,12 +164,8 @@ function CheckoutPage() {
 
           <Card className="mb-6 border-border shadow-card">
             <CardContent className="space-y-1 p-6 text-center">
-              <p className="text-sm font-semibold text-primary">
-                PCOS Consultation With Dr. Zaib-un-Nisa
-              </p>
-              <p className="text-xs text-muted-foreground">
-                MBBS, FCPS &middot; Consultant Gynaecologist &amp; Obstetrician
-              </p>
+              <p className="text-sm font-semibold text-primary">PCOS Consultation With Dr. Zaib-un-Nisa</p>
+              <p className="text-xs text-muted-foreground">MBBS, FCPS &middot; Consultant Gynaecologist &amp; Obstetrician</p>
               <p className="font-display text-3xl font-semibold text-primary">PKR 700</p>
               <p className="text-xs text-muted-foreground">15 minutes &middot; Daily, 9:00 AM – 1:00 PM</p>
             </CardContent>
@@ -154,15 +186,7 @@ function CheckoutPage() {
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="whatsapp">WhatsApp Number</Label>
-                    <Input
-                      id="whatsapp"
-                      name="whatsapp"
-                      type="tel"
-                      inputMode="tel"
-                      placeholder="03XX XXXXXXX"
-                      required
-                      className="h-12 text-base"
-                    />
+                    <Input id="whatsapp" name="whatsapp" type="tel" inputMode="tel" placeholder="03XX XXXXXXX" required className="h-12 text-base" />
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="city">City</Label>
@@ -172,16 +196,8 @@ function CheckoutPage() {
                 <div className="space-y-1.5">
                   <Label htmlFor="concern">Main PCOS Concern</Label>
                   <Select value={concern} onValueChange={setConcern} required>
-                    <SelectTrigger id="concern" className="h-12 w-full text-base">
-                      <SelectValue placeholder="Select your main concern" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {concerns.map((c) => (
-                        <SelectItem key={c} value={c}>
-                          {c}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
+                    <SelectTrigger id="concern" className="h-12 w-full text-base"><SelectValue placeholder="Select your main concern" /></SelectTrigger>
+                    <SelectContent>{concerns.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
                   </Select>
                 </div>
               </CardContent>
@@ -194,64 +210,36 @@ function CheckoutPage() {
                   {paymentMethods.map(({ id, icon: Icon, label }) => {
                     const active = method === id;
                     return (
-                      <button
-                        key={id}
-                        type="button"
-                        onClick={() => setMethod(id)}
-                        aria-pressed={active}
-                        className={`flex items-center justify-center gap-2 rounded-xl border px-3 py-3 text-sm font-medium transition-colors ${
-                          active
-                            ? "border-primary bg-accent text-primary ring-2 ring-ring/40"
-                            : "border-border bg-secondary/60 text-primary hover:bg-secondary"
-                        }`}
-                      >
-                        <Icon className="size-4 shrink-0" aria-hidden="true" />
-                        {label}
+                      <button key={id} type="button" onClick={() => setMethod(id)} aria-pressed={active} className={`flex items-center justify-center gap-2 rounded-xl border px-3 py-3 text-sm font-medium transition-colors ${active ? "border-primary bg-accent text-primary ring-2 ring-ring/40" : "border-border bg-secondary/60 text-primary hover:bg-secondary"}`}>
+                        <Icon className="size-4 shrink-0" aria-hidden="true" />{label}
                       </button>
                     );
                   })}
                 </div>
-
                 <div className="space-y-1 rounded-xl bg-accent/50 p-5 text-left text-sm">
                   <p className="font-semibold text-primary">{activeDetails.title}</p>
-                  {activeDetails.lines.map((line) => (
-                    <p key={line} className="break-all text-foreground/85">
-                      {line}
-                    </p>
-                  ))}
+                  {activeDetails.lines.map((line) => <p key={line} className="break-all text-foreground/85">{line}</p>)}
                 </div>
-
-
                 <div className="space-y-1.5">
                   <Label htmlFor="screenshot">Payment Screenshot Upload</Label>
-                  <label
-                    htmlFor="screenshot"
-                    className="flex cursor-pointer flex-col items-center gap-2 rounded-xl border border-dashed border-border bg-background px-4 py-6 text-center text-sm text-muted-foreground transition-colors hover:bg-secondary/60"
-                  >
+                  <label htmlFor="screenshot" className="flex cursor-pointer flex-col items-center gap-2 rounded-xl border border-dashed border-border bg-background px-4 py-6 text-center text-sm text-muted-foreground transition-colors hover:bg-secondary/60">
                     <Upload className="size-5 shrink-0" aria-hidden="true" />
                     <span>{fileName || "Tap to upload your payment screenshot (JPG or PNG)"}</span>
                   </label>
-                  <Input
-                    id="screenshot"
-                    name="screenshot"
-                    type="file"
-                    accept="image/*"
-                    className="sr-only hidden"
-                    onChange={(e) => setFileName(e.target.files?.[0]?.name ?? "")}
-                  />
+                  <Input id="screenshot" name="screenshot" type="file" accept="image/*" className="sr-only hidden" onChange={async (e) => {
+                    const file = e.target.files?.[0];
+                    setFileName(file?.name ?? "");
+                    if (file) {
+                      try { setProofDataUrl(await fileToDataUrl(file)); } catch { setProofDataUrl(""); }
+                    } else setProofDataUrl("");
+                  }} />
                 </div>
               </CardContent>
             </Card>
 
-            <Button
-              type="submit"
-              size="lg"
-              disabled={submitting}
-              className="h-auto w-full rounded-full px-6 py-4 text-base font-semibold shadow-soft"
-            >
+            <Button type="submit" size="lg" disabled={submitting} className="h-auto w-full rounded-full px-6 py-4 text-base font-semibold shadow-soft">
               Confirm My Consultation Booking
             </Button>
-
             <ul className="mx-auto grid max-w-md gap-2.5 sm:grid-cols-2">
               <TickItem>Your details are used only to confirm your appointment</TickItem>
               <TickItem>Confirmation shared on WhatsApp by our team</TickItem>
@@ -268,4 +256,3 @@ function CheckoutPage() {
     </div>
   );
 }
-
